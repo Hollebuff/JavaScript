@@ -1,0 +1,179 @@
+/*公共样式--开始重置*/
+/*公共样式--开始*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Microsoft YaHei";
+    font-size:14px;
+    color:#333;
+    margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+
+ul,ol,li{
+    list-style: none;
+}
+img {
+    border: none;
+    vertical-align: middle;
+}
+a {
+    text-decoration: none;
+    color: #232323;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+input, textarea {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: ".";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    overflow:hidden;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.tl {
+    text-align: left;
+}
+
+.tc {
+    text-align: center
+}
+
+.tr {
+    text-align: right;
+}
+
+.ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.inline{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;    
+}
+
+// 样式区域
+$bodyWidth:1240px;
+$marginCenter: 0 atou;
+
+.head{
+    width: 100%;
+    height: 32px;
+    background: #f6f6f6;
+    border-bottom: solid 1px #ddd;
+    z-index: 9; 
+}
+.head-wrap{
+    margin: 0 auto;
+    width: $bodyWidth;
+}
+.head-ngn{
+    & ul .dropdown{
+        float: left;
+        padding: 0 2px;
+        line-height: 32px;
+        padding: 0 10px;
+        &:hover .dropmenu{
+            display: block;
+        }
+    }
+}
+
+
+/* 登录注册 */
+.head-login{
+    & ul >li{
+		float: left;
+        line-height: 32px;
+        padding: 0 10px;
+	}
+}
+
+.iconfont{
+    font-family: iconfont !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;    
+}
+
+// 3d66 下拉菜单
+.dropmenu{
+    display: none;
+    top: 32px;
+    line-height: 24px;
+    padding: 6px 12px;
+    border: solid 1px #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    & li{
+        color: #666;
+        line-height: 26px;
+        font-size: 12px;
+        & a{
+            margin-left: 0px;
+            color: #666;
+        }
+        & a:hover{
+            color: #19b955;
+        }
+    }
+    &::before{
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        margin-left: -7px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        content: '';
+        border-bottom: 7px dashed #ddd;
+        border-bottom: 7px solid #ddd;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+    }
+}
+.dropqqmenu{
+    display: none;
+    position: absolute;
+}
+.dropdown:hover .dropqqmenu{
+    display: block;
+}
