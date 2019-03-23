@@ -177,11 +177,49 @@ textarea {
   border-left: 7px solid transparent;
 }
 
-.dropqqmenu {
-  display: none;
-  position: absolute;
+.dropdown {
+  position: relative;
 }
 
-.dropdown:hover .dropqqmenu {
+.dropdown .dropqqmenu {
+  position: absolute;
+  display: none;
+  left: -104px;
+  width: 720px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.dropdown :hover .dropqqmenu {
   display: block;
+}
+
+.menuqq-wrap {
+  float: left;
+  width: 320px;
+}
+
+.menuqq-wrap .title {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+}
+
+.menuqq-wrap .title span {
+  display: block;
+}
+
+.qqitems a {
+  display: inline-block;
+  color: #666;
+  background: #e6e6e6;
+  margin-left: 4px;
+  padding: 4px 10px;
+  line-height: 20px;
+  border-radius: 1px;
+}
+
+.menuwx-wrap {
+  float: left;
+  width: 382px;
 }
