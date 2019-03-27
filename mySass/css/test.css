@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-  font-family: "Microsoft YaHei";
+  font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #333;
   margin: 0 auto;
@@ -36,7 +36,6 @@ img {
 
 a {
   text-decoration: none;
-  color: #232323;
 }
 
 table {
@@ -100,35 +99,44 @@ textarea {
   *zoom: 1;
 }
 
+@media screen and (min-width: 1860px) {
+  .logosearch-warp, .head-wrap, .nav-warp, .bannar-warp {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.tocenter, .logosearch .logosearch-warp {
+  margin: 0 auto;
+}
+
 .head {
   width: 100%;
   height: 32px;
   background: #f6f6f6;
   border-bottom: solid 1px #ddd;
-  z-index: 9;
+  z-index: 99;
 }
 
 .head-wrap {
   margin: 0 auto;
-  width: 1240px;
 }
 
-.head-ngn ul .dropdown {
+/*头部导航部分*/
+.head-home .head-container > li {
   float: left;
   padding: 0 2px;
   line-height: 32px;
   padding: 0 10px;
+  margin-bottom: 6px;
 }
 
-.head-ngn ul .dropdown:hover .dropmenu {
+.head-home .head-container .dropdown {
+  position: relative;
+}
+
+.dropdown-home:hover .dropmenu {
   display: block;
-}
-
-/* 登录注册 */
-.head-login ul > li {
-  float: left;
-  line-height: 32px;
-  padding: 0 10px;
 }
 
 .iconfont {
@@ -139,12 +147,14 @@ textarea {
 }
 
 .dropmenu {
+  position: absolute;
   display: none;
-  top: 32px;
   line-height: 24px;
   padding: 6px 12px;
+  z-index: 999;
   border: solid 1px #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: white;
 }
 
 .dropmenu li {
@@ -162,36 +172,27 @@ textarea {
   color: #19b955;
 }
 
-.dropmenu::before {
-  position: absolute;
-  top: -7px;
-  left: 50%;
-  margin-left: -7px;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  content: '';
-  border-bottom: 7px dashed #ddd;
-  border-bottom: 7px solid #ddd;
-  border-right: 7px solid transparent;
-  border-left: 7px solid transparent;
-}
-
-.dropdown {
+.dropdown-qq {
   position: relative;
 }
 
-.dropdown .dropqqmenu {
+.dropdown-qq .dropqqmenu {
   position: absolute;
   display: none;
   left: -104px;
-  width: 720px;
+  width: 740px;
   background: #fff;
   border: 1px solid #ddd;
+  z-index: 99;
 }
 
-.dropdown :hover .dropqqmenu {
+.dropdown-qq:hover .dropqqmenu {
   display: block;
+}
+
+.menuqq-one, .menuqq-two {
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #19b955;
 }
 
 .menuqq-wrap {
@@ -209,17 +210,702 @@ textarea {
   display: block;
 }
 
+.menuqq-wrap .title .title-more a {
+  color: #19b955;
+}
+
 .qqitems a {
-  display: inline-block;
-  color: #666;
+  position: relative;
+  margin-left: 6px;
   background: #e6e6e6;
-  margin-left: 4px;
-  padding: 4px 10px;
+  display: inline-block;
   line-height: 20px;
+  padding: 0 8px 0 24px;
   border-radius: 1px;
 }
 
-.menuwx-wrap {
+.qqitems a:before {
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/qq.png") 0 center no-repeat;
+  background-size: 16px;
+}
+
+/* 添加微信 */
+.menuqq-explain {
+  padding-left: 4px;
+}
+
+.menuqq-explain p {
+  color: #999;
+}
+
+.menuwx-warp {
   float: left;
-  width: 382px;
+  width: 402px;
+}
+
+.menuwx-warp .wxitems .wxitems-container .wechat-img img {
+  width: 80px;
+  height: 80px;
+}
+
+.wxitems-container > li {
+  display: inline-block;
+  margin-left: 16px;
+  margin-top: 10px;
+  text-align: center;
+  color: #999;
+}
+
+.wxitems-container > li p {
+  text-align: center;
+  font-size: 12px;
+}
+
+.wx-add {
+  margin-left: 16px;
+}
+
+.wx-add p {
+  color: #999;
+}
+
+/* 头部导航 */
+.dropdownnav {
+  position: relative;
+}
+
+.dropdownnav .headnav {
+  display: none;
+  position: absolute;
+  left: -300px;
+  width: 746px;
+  border: 1px solid #ddd;
+  background: white;
+  z-index: 99;
+}
+
+.dropdownnav .headnav a:hover {
+  color: #19b519;
+}
+
+.dropdownnav:hover .headnav {
+  display: block;
+}
+
+.headnav-container {
+  padding: 20px;
+  height: 200px;
+}
+
+.headnav-container .headnavitems {
+  float: left;
+  padding: 0 40px;
+  border-left: 1px solid #eee;
+  text-align: center;
+}
+
+.headnav-container .headnavitems li a {
+  font-size: 12px;
+  color: #666;
+}
+
+.head-container ul:first-of-type {
+  border-left: none;
+}
+
+/* 登录注册 */
+.head-login .login-container > li {
+  float: left;
+  line-height: 32px;
+  padding: 0 10px;
+}
+
+.head-login .login-container > li:first-of-type a {
+  color: #19b519;
+  margin-right: 40px;
+}
+
+.head-login .loginred a {
+  color: #19b519;
+}
+
+.head-login .register a {
+  display: inline-block;
+  padding: 0 6px;
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  background: #19b519;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.head-login .loginitems ul a {
+  color: #333;
+}
+
+.loginitems {
+  position: relative;
+}
+
+.loginitems ul {
+  position: absolute;
+  top: 32px;
+  left: 6px;
+  display: none;
+  border: 1px solid #ddd;
+  background: white;
+  z-index: 99;
+}
+
+.loginitems ul li {
+  line-height: 26px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+.loginitems ul li a:hover {
+  color: #19b519;
+}
+
+.loginitems:hover ul {
+  display: block;
+}
+
+/* logo和搜索框 */
+.logosearch {
+  margin-top: 40px;
+  height: 88px;
+  background: white;
+}
+
+.logosearch .logosearch-warp {
+  position: relative;
+  height: 88px;
+}
+
+.search-warp {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -200px;
+  width: 522px;
+}
+
+.logo, .search {
+  float: left;
+}
+
+.search {
+  margin-bottom: 10px;
+  height: 38px;
+}
+
+.search > div {
+  float: left;
+}
+
+.search .selectbox {
+  border: 1px solid #19b519;
+}
+
+.search .selectbox > div {
+  float: left;
+}
+
+.selectitems {
+  position: relative;
+  border-right: 1px solid #ddd;
+  width: 98px;
+}
+
+.selectitems ul {
+  display: none;
+}
+
+/* 条件选择 */
+.selectitems {
+  height: 36px;
+  width: 90px;
+}
+
+.selectitems select {
+  height: 36px;
+  padding-left: 2px;
+  border: 0;
+  cursor: pointer;
+}
+
+.selectitems select option {
+  line-height: 32px;
+  cursor: pointer;
+}
+
+.searchinp {
+  padding-right: 10px;
+}
+
+.searchinp i {
+  color: #19b519;
+}
+
+.searchinp input {
+  outline: none;
+  width: 300px;
+  line-height: 36px;
+  text-indent: 1em;
+}
+
+.searchbtn {
+  float: right;
+}
+
+.searchbtn input {
+  display: inline-block;
+  width: 100px;
+  height: 38px;
+  background: #19b955;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hotsearch a {
+  display: inline-block;
+  margin-left: 8px;
+  color: #999;
+}
+
+.hotfunctton {
+  float: right;
+}
+
+.hotfunctton a {
+  margin-right: 18px;
+}
+
+/* nav导航 */
+.nav-warp {
+  position: relative;
+}
+
+.nav {
+  margin-top: 40px;
+}
+
+.navitems > li {
+  float: left;
+  position: relative;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+}
+
+.navitems > li > a {
+  font-size: 17px;
+  color: #333;
+}
+
+.navitems > li a:hover {
+  color: #19b519;
+}
+
+.navitems .navlist:hover .submenu {
+  display: block;
+}
+
+/* 下拉nav */
+.submenu {
+  position: absolute;
+  display: none;
+  margin-left: -15px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  min-width: 110px;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.submenu > li {
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.submenu > li:first-of-type {
+  border-top: none;
+}
+
+.submenu > li a {
+  display: inline-block;
+  padding: 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #666;
+}
+
+.submenu > li a:hover {
+  color: white;
+  background: #19b955;
+}
+
+.navitems .nav-blue > a {
+  color: #07bce9;
+}
+
+.navitems .nav-grenn > a {
+  color: green;
+}
+
+.material-menu {
+  display: none;
+  position: absolute;
+  border: 1px solid #ddd;
+}
+
+.materialsize {
+  height: 495px;
+  width: 940px;
+  transform: translateX(-30%);
+}
+
+.submenu-wrap {
+  margin: 20px 10px;
+}
+
+.submenu-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.submenu-nav ul li {
+  float: left;
+  margin: 0 10px;
+  height: 44px;
+  line-height: 44px;
+  width: 104px;
+}
+
+.submenu-nav ul li > a {
+  display: inline-block;
+  border: 1px solid #19b955;
+  border-radius: 84px;
+  text-align: center;
+  color: #19b955;
+  width: 104px;
+  line-height: 40px;
+}
+
+.submenuline {
+  border-top: 1px dashed #19b955;
+  padding-top: 10px;
+}
+
+.submenu-container {
+  margin-top: 10px;
+}
+
+.submenu-container .submenu-items {
+  float: left;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.submenu-container .submenu-items li:first-of-type a span {
+  font-size: 15px;
+  color: #333;
+}
+
+.submenu-container .submenu-items li {
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+}
+
+.submenu-container .submenu-items li a {
+  font-size: 14px;
+  color: #666;
+}
+
+.submenu-container .submenu-items li a:hover {
+  color: #19b955;
+}
+
+.search-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.search-text a {
+  font-size: 16px;
+  color: #19b955;
+}
+
+.shownavsize {
+  height: 455px;
+  width: 740px;
+  transform: translateX(-60%);
+}
+
+.shownavsize .submenu-wrap .submenu-container .submenu-items {
+  margin-left: 32px;
+}
+
+.shownavsize .submenu-wrap .submenu-container .submenu-items li {
+  width: 192px;
+}
+
+.nav-bannar .bg, .nav-login .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+  z-index: -1;
+}
+
+.nav-bannar {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 210px;
+  height: 670px;
+  z-index: 2;
+}
+
+.nav-bannar > ul > li {
+  font-size: 16px;
+  color: #fff;
+  padding-left: 35px;
+}
+
+.nav-bannar > ul > li > a {
+  color: #fff;
+  height: 42px;
+  line-height: 42px;
+  width: 100%;
+  display: inline-block;
+}
+
+.nav-bannar > ul > li > a > i {
+  margin-right: 12px;
+}
+
+.wire {
+  border: none;
+  background: none;
+  height: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.wire b {
+  width: 168px;
+  border-top: 1px solid #838084;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.nav-login {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 210px;
+  height: 670px;
+  z-index: 2;
+  font-size: 14px;
+}
+
+.nav-login .user {
+  color: #fff;
+  margin-top: 26px;
+  padding: 0 15px;
+  height: 125px;
+}
+
+.user .userinfo > div {
+  float: left；;
+}
+
+.user .userinfo .usertitle {
+  margin-left: 6px;
+}
+
+.user .userinfo .usertitle p {
+  height: 26px;
+  line-height: 26px;
+}
+
+.user .btnbox {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.user .btnbox .btn {
+  display: inline-block;
+  width: 70px;
+  height: 24px;
+  line-height: 22px;
+  margin: 5px;
+  cursor: pointer;
+  border: solid 1px #19b955;
+}
+
+.btn-login {
+  background: #19b955;
+}
+
+.nav-user-dscrition {
+  font-size: 10px;
+}
+
+.userlogo {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.tab .tab-head {
+  background: #333;
+  line-height: 35px;
+  color: #ccc;
+  padding: 0 15px;
+}
+
+.tab .tab-head > li {
+  float: left;
+  width: 33.33%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tab .tab-head > li > a {
+  color: #999;
+}
+
+.tab .tab-head li.active a {
+  color: #19b955;
+}
+
+.tab .tab-body {
+  padding: 10px 15px;
+  color: #999;
+}
+
+.nav-login .tab .tab-body a {
+  display: inline-block;
+  max-width: 100%;
+  color: #ccc;
+  line-height: 32px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rank .tab-body li {
+  height: 30px;
+  line-height: 30px;
+}
+
+.rank .tab-body li p, .rank .tab-body li span {
+  font-weight: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.rank .tab-body li p {
+  display: inline-block;
+  width: 90px;
+}
+
+.rank .tab-body li span {
+  float: right;
+  width: 60px;
+  text-align: right;
+}
+
+.index-bannar {
+  width: 100%;
+  height: 670px;
+  overflow: hidden;
+}
+
+.bannar-warp {
+  position: relative;
+  height: 670px;
+}
+
+.bannar {
+  position: relative;
+  height: 670px;
+  margin: 0 210px;
+}
+
+.flexslider {
+  background: #fff;
+  position: relative;
+  zoom: 1;
+}
+
+.bannar-left, .bannar-right {
+  position: absolute;
+  top: 0;
+  height: 670px;
+  width: 3000px;
+  background: #fff;
+  z-index: 1;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+.bannar-left {
+  right: 100%;
+}
+
+.bannar-right {
+  left: 100%;
+}
+
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flex-control-nav li {
+  margin: 0 5px;
+  zoom: 1;
+  display: inline-block;
+}
+
+.flex-control-nav li a {
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  display: block;
+  cursor: pointer;
+  border: solid 2px #fff;
+  text-indent: -9999px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
 }

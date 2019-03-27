@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-    font-family: "Microsoft YaHei";
+    font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif;
     font-size:14px;
     color:#333;
     margin: 0 auto;
@@ -28,7 +28,7 @@ img {
 }
 a {
     text-decoration: none;
-    color: #232323;
+    // color: #232323;
 }
 
 table {
@@ -93,40 +93,51 @@ textarea {
 
 // 样式区域
 $bodyWidth:1240px;
-$marginCenter: 0 atou;
+$marginCenter: 0 auto;
+@media screen and(min-width:1860px){
+    .logosearch-warp, .head-wrap, .nav-warp, .bannar-warp, .warp{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
+.tocenter{
+    // width: 1240px;
+    margin: 0 auto;
+}
 .head{
     width: 100%;
     height: 32px;
     background: #f6f6f6;
     border-bottom: solid 1px #ddd;
-    z-index: 9; 
+    z-index: 99; 
 }
 .head-wrap{
     margin: 0 auto;
-    width: $bodyWidth;
+    // width: $bodyWidth;
 }
-.head-ngn{
-    & ul .dropdown{
-        float: left;
-        padding: 0 2px;
-        line-height: 32px;
-        padding: 0 10px;
-        &:hover .dropmenu{
-            display: block;
+
+/*头部导航部分*/
+.head-home{
+    & .head-container{
+        & > li{
+            float: left;
+            padding: 0 2px;
+            line-height: 32px;
+            padding: 0 10px;
+            margin-bottom: 6px;
+        }
+        & .dropdown{
+            position: relative;
         }
     }
 }
-
-
-/* 登录注册 */
-.head-login{
-    & ul >li{
-		float: left;
-        line-height: 32px;
-        padding: 0 10px;
-	}
+.dropdown-home:hover .dropmenu{
+    display: block;
 }
+
+
+
 
 .iconfont{
     font-family: iconfont !important;
@@ -135,14 +146,17 @@ $marginCenter: 0 atou;
     -webkit-text-stroke-width: 0.2px;    
 }
 
+
 // 3d66 下拉菜单
 .dropmenu{
+    position: absolute;
     display: none;
-    top: 32px;
     line-height: 24px;
     padding: 6px 12px;
+    z-index: 999;
     border: solid 1px #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: white;
     & li{
         color: #666;
         line-height: 26px;
@@ -155,34 +169,27 @@ $marginCenter: 0 atou;
             color: #19b955;
         }
     }
-    &::before{
-        position: absolute;
-        top: -7px;
-        left: 50%;
-        margin-left: -7px;
-        display: inline-block;
-        width: 0;
-        height: 0;
-        content: '';
-        border-bottom: 7px dashed #ddd;
-        border-bottom: 7px solid #ddd;
-        border-right: 7px solid transparent;
-        border-left: 7px solid transparent;
-    }
 }
-.dropdown{
+
+.dropdown-qq{
     position: relative;
     & .dropqqmenu{
         position: absolute;
         display: none;
         left: -104px;
-        width: 720px;
+        width: 740px;
         background: #fff;
         border: 1px solid #ddd;
+        z-index: 99;
     }
-    & :hover .dropqqmenu{
+    &:hover .dropqqmenu{
         display: block;
+        
     }
+}
+.menuqq-one , .menuqq-two{
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #19b955;
 }
 
 .menuqq-wrap{
@@ -195,27 +202,683 @@ $marginCenter: 0 atou;
         & span{
             display: block;
         }
+        & .title-more a{
+            color: #19b955;
+        }
     }
 }
 
+
 .qqitems{
     & a{
-        display: inline-block;
-        // float: left;
-        color: #666;
+        position: relative;
+        margin-left: 6px;
         background: #e6e6e6;
-        margin-left: 4px;
-        padding: 4px 10px;
+        display: inline-block;
         line-height: 20px;
+        padding: 0 8px 0 24px;
         border-radius: 1px;
-    }    
+        &:before{
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url('../images/qq.png') 0 center no-repeat;
+            background-size: 16px;
+        }
+    }
 }
-.menuwx-wrap{
+/* 添加微信 */
+.menuqq-explain{
+    padding-left: 4px;
+    p{
+        color: #999;   
+    }
+}
+.menuwx-warp{
     float: left;
-    width: 382px;
+    width: 402px;
+    .wxitems{
+        .wxitems-container .wechat-img img{
+            $webchatsize:80px;
+            width: $webchatsize;
+            height: $webchatsize;
+        }
+    }
+}
+.wxitems-container > li{
+    display: inline-block;
+    margin-left: 16px;
+    margin-top: 10px;
+    text-align: center;
+    color: #999;
+    p{
+        text-align: center;
+        font-size: 12px
+    }
+}
+.wx-add{
+    margin-left: 16px;
+    p{
+        color: #999;
+    }
+}
+
+
+/* 头部导航 */
+.dropdownnav{
+    position: relative;
+    .headnav{
+        display: none;
+        position: absolute;
+        left: -300px;
+        width: 746px;
+        border: 1px solid #ddd;
+        background: white;
+        z-index: 99;
+        & a:hover{
+            color: #19b519;
+        }
+    }
+    &:hover .headnav{
+        display: block;
+    }
+}
+.headnav-container{
+    padding: 20px;
+    height: 200px;
+    .headnavitems{
+        float: left;
+        padding: 0 40px;
+        border-left: 1px solid #eee;
+        text-align: center;
+    & li a{
+        font-size: 12px;
+        color: #666;
+
+    }
+    }
+}
+.head-container ul:first-of-type{
+    border-left: none;
+}
+
+
+/* 登录注册 */
+.head-login{
+    & .login-container >li{
+		float: left;
+        line-height: 32px;
+        padding: 0 10px;
+	}
+    & .login-container > li:first-of-type a{
+        color: #19b519;
+        margin-right: 40px;
+    }
+    .loginred a{
+        color: #19b519;
+    }
+    .register a{
+        display: inline-block;
+        padding: 0 6px;
+        height: 20px;
+        line-height: 20px;
+        color: #fff;
+        background: #19b519;
+        border-radius: 4px;
+        text-align: center;
+    }
+}
+
+.head-login .loginitems ul a{
+    color: #333;
+}
+.loginitems{
+    position: relative;
+    & ul{
+        position: absolute;
+        top: 32px;
+        left: 6px;
+        display: none;
+        border: 1px solid #ddd;
+        background: white;
+        z-index: 99;
+        li {
+            line-height: 26px;
+            padding: 2px 10px;
+            white-space: nowrap;
+            a:hover{
+                color: #19b519;    
+            }
+        }
+    }
+    &:hover ul{
+        display: block;
+    }
+}
+
+/* logo和搜索框 */
+.logosearch{
+    margin-top: 40px;
+    height: 88px;
+    background: white;
+    .logosearch-warp{
+        position: relative;
+        height: 88px;
+        @extend .tocenter;
+    }
+}
+.search-warp{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -200px;
+    width: 522px;
+}
+
+.logo, .search{
+    float: left;
+}
+.search{
+    margin-bottom: 10px;
+    height: 38px;
+    & > div{
+        float: left;
+    }
+    & .selectbox{
+        border: 1px solid #19b519;
+        & > div{
+            float: left;
+        }
+    }
+}
+
+
+.selectitems{
+    position: relative;
+    border-right: 1px solid #ddd;
+    width: 98px;
+
+    & ul {
+        display: none;
+    } 
+    
+}
+
+$selecthigth:36px;
+/* 条件选择 */
+.selectitems{
+    height: $selecthigth;
+    width: 90px;
+    & select{
+        height: $selecthigth;
+        padding-left: 2px;
+        border: 0; 
+        cursor: pointer;
+        & option{
+            line-height: 32px;
+            cursor: pointer;
+        }
+    }
+}
+.searchinp{
+    padding-right: 10px;
+    & i{
+        color: #19b519;
+    }
+    & input{
+        outline: none;
+        width: 300px;
+        line-height: $selecthigth;
+        text-indent: 1em;
+    }
+}
+.searchbtn {
+    float: right;
+    & input{
+        display: inline-block;
+        width: 100px;
+        height: $selecthigth + 2px;
+        background: #19b955;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+
+    }
+}
+.hotsearch a{
+    display: inline-block;
+    margin-left: 8px;
+    color: #999;
+}
+
+.hotfunctton{
+    float: right;
+    & a{
+        margin-right: 18px;
+    }
+}
+
+/* nav导航 */
+.nav-warp{
+    position: relative;    
+}   
+
+.nav{
+    margin-top: 40px;
+}
+
+.navitems{ 
+    & > li{
+        float: left;
+        position: relative;
+        height: 44px;
+        line-height: 44px;
+        padding: 0 10px;
+        & > a{
+            font-size: 17px;
+            color: #333;
+        }
+        & a:hover{
+            color: #19b519;
+        }
+    }
+    & .navlist:hover .submenu{
+        display: block;
+    }
+}
+
+/* 下拉nav */
+.submenu{
+    position: absolute;
+    display: none;
+    margin-left: -15px;
+    border: 1px solid #eee;
+    font-size: 14px;
+    min-width: 110px;;
+    white-space: nowrap;
+    background: #fff;
+    & > li{
+        height: 40px;
+        line-height: 40px;
+        border-top: 1px solid #ddd;
+        text-align: center;
+    }
+
+    & > li:first-of-type{
+        border-top: none;
+    }
+    & > li a{
+        display: inline-block;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #666;
+        
+
+    }
+    & > li a:hover{
+        color: white;
+        background: #19b955;
+    }
+}
+.navitems{
+    & .nav-blue > a{
+        color: #07bce9;
+
+    }
+    & .nav-grenn > a{
+    color: green;
+    }
+}
+.material-menu{
+    display: none;
+    position: absolute;
+    border: 1px solid #ddd;
+}
+.materialsize{
+    height: 495px;
+    width: 940px;
+    transform: translateX(-30%);    
+}
+
+.submenu-wrap{
+    margin: 20px 10px;
+}
+.submenu-nav{
+    display: flex;
+    justify-content: center;
+    & ul li{
+        float: left;
+        margin: 0 10px;
+        height: 44px;
+        line-height: 44px;
+        width: 104px;
+        & > a{
+            display: inline-block;
+            border: 1px solid #19b955;
+            border-radius: 84px;
+            text-align: center;
+            color: #19b955;
+            width: 104px;
+            line-height: 40px;
+
+
+        }
+    }
+}
+
+.submenuline{
+    border-top: 1px dashed #19b955;
+    padding-top: 10px;
+}
+.submenu-container{
+    margin-top: 10px;
+    & .submenu-items{
+        float: left;
+        margin-left: 40px;
+        margin-top: 10px;
+        & li:first-of-type a span{
+            font-size: 15px;
+            color: #333;
+        }
+        & li{
+            $itemsli:30px;
+            height: $itemsli;
+            line-height: $itemsli;
+            text-align: left;
+            & a{
+                font-size: 14px;
+                color: #666;
+            }
+            & a:hover{
+                color: #19b955;
+            }
+        }
+    }
+}
+.search-text {
+    text-align: center;
+    margin-top: 20px;
+    & a{
+        font-size: 16px;
+        color: #19b955;
+    }
+}
+.shownavsize{
+    height: 455px;
+    width: 740px;
+    transform: translateX(-60%);
+    & .submenu-wrap .submenu-container .submenu-items{
+        margin-left: 32px;
+        & li{
+            width: 192px;
+        }
+    }   
+}
+
+// 轮播图处导航
+
+.nav-bannar .bg, .nav-login .bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: 0.8;
+    filter: alpha(opacity=70);
+    z-index: -1;
+}
+
+.nav-bannar{
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 210px;
+    height: 670px;
+    z-index: 2;
+    & > ul >li{
+        font-size: 16px;
+        color: #fff;
+        padding-left: 35px;
+        & > a{
+            color: #fff;
+            height: 42px;
+            line-height: 42px;
+            width: 100%;
+            display: inline-block;
+            & > i{
+                margin-right: 12px;
+            } 
+        }
+    }
+}
+.wire{
+    border: none;
+    background: none;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    & b{
+        width: 168px;
+        border-top: 1px solid #838084;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
+}
+.nav-login{
+    position: absolute;
+    top: 44px;
+    right: 0;
+    width: 210px;
+    height: 670px;
+    z-index: 2;
+    font-size: 14px;
+    & .user{
+        color: #fff;
+        margin-top: 26px;
+        padding: 0 15px;
+        height: 125px;
+    }
+}
+
+.user{ 
+    .userinfo{
+        > div{
+            float: left；
+        }
+        .usertitle{
+            margin-left: 6px;
+            p {
+                height: 26px;
+                line-height: 26px;
+            }
+        }
+    }
+    .btnbox{
+        margin-top: 20px;
+        text-align: center;
+        .btn{
+            display: inline-block;
+            width: 70px;
+            height: 24px;
+            line-height: 22px;
+            margin: 5px;
+            cursor: pointer;
+            border: solid 1px #19b955;
+        }
+    }
+}
+.btn-login{
+    background: #19b955;
+
+} 
+
+ .nav-user-dscrition{
+    font-size: 10px;
+}
+
+.userlogo{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 25px;
 }
 
 
 
+// 轮播用户
+.tab{
+    .tab-head{
+        background: #333;
+        line-height: 35px;
+        color: #ccc;
+        padding: 0 15px;
+        > li{
+            float: left;
+            width: 33.33%;
+            cursor: pointer;
+            text-align: center;
+            > a{
+                color: #999;
+            }
+            
+        }
+        li.active a{
+                color: #19b955;
+            }
+    }
+}
+
+.tab{
+    .tab-body{
+        padding: 10px 15px;
+        color: #999;
+    }
+
+}
+.nav-login{
+    .tab{
+        .tab-body{
+            a{
+                display: inline-block;
+                max-width: 100%;
+                color: #ccc;
+                line-height: 32px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.rank{
+    .tab-body{
+        li{
+            height: 30px;
+            line-height: 30px;
+            p, span{
+                font-weight: normal;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            p{
+                display: inline-block;
+                width: 90px;
+            }
+            span{
+                float: right;
+                width: 60px;
+                text-align: right;
+                
+            }
+            
+        }
+
+    }
+}
+
+// 轮播图
+.index-bannar{
+    width: 100%;
+    height: 670px;
+    overflow: hidden;
+}
+.bannar-warp{
+    position: relative;
+    height: 670px;
+}
+.bannar{
+    position: relative;
+    height: 670px;
+    margin: 0 210px;
+
+}
+.flexslider{
+    background: #fff;
+    position: relative;
+    zoom: 1;
+}
+.bannar-left, .bannar-right{
+    position: absolute;
+    top: 0;
+    height: 670px;
+    width: 3000px;
+    background: #fff;
+    z-index: 1;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+.bannar-left{
+    right: 100%;
+}
+.bannar-right{
+    left: 100%;
+}
 
 
+.flex-control-nav{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    z-index: 3;
+    li{
+        margin: 0 5px;
+        zoom: 1;
+        display: inline-block;
+    }
+}
+.flex-control-paging{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    a{
+        width: 10px;
+        height: 10px;
+        line-height: 10px;
+        display: block;
+        cursor: pointer;
+        border: solid 2px #fff;
+        text-indent: -9999px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+    }
+}
+
+/* 子广告 */
+.aditems{
+    margin: 35px -7px -7px -7px;
+    li{
+        width: 16.66%;
+        float: left;
+    }
+}
