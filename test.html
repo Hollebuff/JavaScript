@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+#container {
+    width: 720px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+#list {
+    overflow: hidden;
+    position: absolute;
+}
+
+#list a {
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+#list img {
+    width: 720px;
+    height: 500px;
+    float: left;
+}
+
+#spanlist {
+    position: absolute;
+    z-index: 999;
+    bottom: 15px;
+    left: 50%;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+#spanlist span:last-child{
+    margin-right: 0px;
+}
+.span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    float: left;
+    margin-right: 10px;
+}
+
+.span1 {
+    width: 30px;
+    height: 10px;
+    border-radius: 10px;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+}
+
+.spanbright {
+    width: 30px;
+    height: 10px;
+    border-radius: 10px;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+}
+
+.left {
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: bolder;
+    z-index: 2;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -48px;
+    color: rgba(255, 255, 255, 0.5);
+    display:none;
+}
+
+.right {
+    font-size: 80px;
+    z-index: 2;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    line-height: 80px;
+    height: 80px;
+    margin-top: -48px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: bolder;
+    display:none;
+}
+
+
+</style>
+
+<body>
+    <div id="container" onmouseover="stop()" onmouseout="play()">
+        <div id="list">
+            <a><img src="http://www.51honglingjin.com/template/zvis_app_h5/touch/style/images/1.jpg"></a>
+            <a><img src="http://www.51honglingjin.com/template/zvis_app_h5/touch/style/images/2.jpg"></a>
+            <a><img src="http://www.51honglingjin.com/template/zvis_app_h5/touch/style/images/3.jpg"></a>
+            <a><img src="http://www.51honglingjin.com/template/zvis_app_h5/touch/style/images/4.jpg"></a>
+            <a><img src="http://www.51honglingjin.com/template/zvis_app_h5/touch/style/images/5.jpg"></a>
+            <a><img src="http://www.51honglingjin.com/template/zvis_app_h5/touch/style/images/6.jpg"></a>
+        </div>
+        <div id="spanlist">
+        </div>
+        <a href="javascript:;" id="left" class="left">
+            <</a>
+                <a href="javascript:;" id="right" class="right">></a>
+    </div>
+    <script type="text/javascript">
+    function $$(id) { //获取标签的函数
+        return document.getElementById(id);
+    }
+    </script>
+
+
+    <script type="text/javascript">
+    var list = $$('list');
+    var listLength = $$('list').getElementsByTagName('a').length; //获取图片的数量
+    var imgWidth = list.getElementsByTagName('a')[0].offsetWidth; //获取每张图片宽度
+    list.style.width = listLength * imgWidth + "px"; //自动给图片列表增加宽度
+    var widthAll = listLength * imgWidth + "px";
+
+    var spanlist = $$('spanlist') //获取圆点的总标签
+    for (var i = 0; i < listLength; i++) { //根据图片数量，动态添加span
+        spanlist.appendChild(document.createElement("span"));
+    }
+    var spanlists = spanlist.getElementsByTagName('span') //获取span标签的数组
+    for (var i = 0; i < listLength; i++) {
+        spanlists[i].className = "span"; //遍历所有span，为每个span增加css样式
+        spanlists[i].setAttribute("index", i) //为每个span标签增加下标index(0,1,2,3...图片数量-1)
+    }
+    spanlists[0].className = "span1"; //覆盖前面的第一个span样式
+    //根据spanlist圆点的总宽度，动态调整为中间位置
+    var spanlistWidth = spanlist.offsetWidth / 2; //获取spanlist的宽度并除于2
+    spanlist.style.marginLeft = "-" + spanlistWidth + "px";
+
+    //定义自动切换每次改变的left距离
+    var t = 1; //当前图片序列号
+
+    rs = setInterval('rightsmooth()', 1);//立马获取re
+    clearInterval(rs) //立马清除
+
+    function autoswitch(){
+        t += 1;
+        rs = setInterval('rightsmooth()', 1);
+    }
+
+    timer = setInterval('autoswitch()', 2000); //每2秒执行一次autoswitch函数
+
+
+
+
+    //按钮向右过渡图片
+    function rightsmooth() {
+        clearInterval(rs)
+        if (t>listLength) {
+            list.style.cssText="transition-duration: 500ms;transition-timing-function: ease-out;transform: translatex(-"+0*imgWidth+"px);width:"+widthAll;
+            t=1;
+        }else{
+            list.style.cssText="transition-duration: 500ms;transition-timing-function: ease-out;transform: translatex(-"+(t-1)*imgWidth+"px);width:"+widthAll;
+        }
+
+        for (var j = 0; j < spanlists.length; j++) { //每一次图片滚动，自动改变圆点标签的颜色
+            spanlists[j].setAttribute('class', 'span');
+        }
+        spanlists[t - 1].setAttribute('class', 'spanbright');
+        console.log(t)
+
+    }
+    //按钮向左过渡图片
+    function leftsmooth() {
+        console.log(t)
+        if (t == 0) {
+            list.style.cssText="transition-duration: 500ms;transition-timing-function: ease-out;transform: translatex(-"+(listLength-1)*imgWidth+"px);width:"+widthAll;
+            t=listLength
+        }else{
+            list.style.cssText="transition-duration: 500ms;transition-timing-function: ease-out;transform: translatex(-"+(t-1)*imgWidth+"px);width:"+widthAll;
+        }
+        for (var j = 0; j < spanlists.length; j++) { //每一次图片滚动，自动改变圆点标签的颜色
+            spanlists[j].setAttribute('class', 'span');
+        }
+        spanlists[t - 1].setAttribute('class', 'spanbright');
+    }
+
+
+
+    for (var i = 0; i < spanlists.length; i++) { //为每一个span标签动态添加鼠标事件
+        spanlists[i].onmouseover = function() {
+            for (var j = 0; j < spanlists.length; j++) { //重置所有span的样式
+                spanlists[j].setAttribute('class', 'span');
+            }
+            var myIndex = parseInt(this.getAttribute("index")); //获取每个鼠标事件绑定的index下标的值
+            spanlists[myIndex].setAttribute('class', 'spanbright'); //根据下标值改变颜色
+            list.style.left = "-" + imgWidth * myIndex + "px"; //变换到指定下标对应的图片
+            t = myIndex + 1; //图片序号等于对应鼠标事件的下标（由于一开始t就比下标大1，所以这里加1)
+            console.log(t)
+        }
+    }
+
+
+
+
+    document.addEventListener('visibilitychange', function() { //浏览器切换事件
+        if (document.visibilityState == 'hidden') { //状态判断
+            clearInterval(timer);
+        } else {
+            timer = setInterval('autoswitch()', 2000);
+        }
+    })
+
+    function stop() {
+        clearInterval(timer);
+        $$('left').style.display = "block";
+        $$('right').style.display = "block";
+    }
+
+    function play() {
+        $$('left').style.display = "none";
+        $$('right').style.display = "none";
+        timer = setInterval('autoswitch()', 2000); //每2秒执行一次autoswitch函数
+    }
+
+
+    $$('left').onclick = function() { //鼠标点击左边按钮，图片向左
+        t = t - 1;
+        leftsmooth()
+    }
+    $$('right').onclick = function() { //鼠标点击右边按钮，图片向右
+        t += 1;
+        rightsmooth();
+    }
+    </script>
+</body>
+
+</html>

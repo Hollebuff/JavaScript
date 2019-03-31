@@ -12,6 +12,11 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input,
 
 html, body {
   min-height: 100%;
+  min-width: 1200px;
+}
+
+.width-1200 {
+  width: 1200px;
 }
 
 body {
@@ -19,6 +24,7 @@ body {
   font-size: 14px;
   color: #333;
   margin: 0 auto;
+  background: #f6f6f6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -100,7 +106,7 @@ textarea {
 }
 
 @media screen and (min-width: 1860px) {
-  .logosearch-warp, .head-wrap, .nav-warp, .bannar-warp {
+  .logosearch-warp, .head-wrap, .nav-warp, .bannar-warp, .warp {
     width: 90%;
     margin: 0 auto;
   }
@@ -532,6 +538,7 @@ textarea {
   min-width: 110px;
   white-space: nowrap;
   background: #fff;
+  z-index: 99;
 }
 
 .submenu > li {
@@ -570,6 +577,7 @@ textarea {
   display: none;
   position: absolute;
   border: 1px solid #ddd;
+  z-index: 99;
 }
 
 .materialsize {
@@ -880,15 +888,29 @@ textarea {
   left: 100%;
 }
 
+/* 上下一张图片 */
+.control-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.control-nav li a {
+  font-size: 68px;
+  color: #fff;
+}
+
+/* 图片下标 */
 .flex-control-nav {
   width: 100%;
   position: absolute;
   bottom: 10px;
   text-align: center;
   z-index: 3;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .flex-control-nav li {
@@ -897,7 +919,13 @@ textarea {
   display: inline-block;
 }
 
-.flex-control-nav li a {
+.flex-control-paging {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flex-control-paging a {
   width: 10px;
   height: 10px;
   line-height: 10px;
@@ -908,4 +936,242 @@ textarea {
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+}
+
+.activeon {
+  background: #fff;
+}
+
+/* 子广告 */
+.aditems {
+  margin: 35px -7px -7px -7px;
+}
+
+.aditems li {
+  width: 16.66%;
+  float: left;
+}
+
+/* 商品分类列表 */
+.sellwarp .selltype {
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
+
+.sellwarp .selltype h3 {
+  float: left;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sellwarp .selltype div {
+  float: right;
+}
+
+.sellwarp .selltype div a {
+  color: #999;
+  margin-right: 10px;
+}
+
+.sellitems {
+  margin: -7px;
+}
+
+.sellitems li {
+  position: relative;
+  float: left;
+  width: 16.66%;
+  background: #fff;
+}
+
+.sellitems li .selllist {
+  margin: 7px;
+  border: solid 1px #f5f5f5;
+}
+
+.sellitems li .selllist:hover {
+  box-shadow: 0 0 10px #e2e2e2;
+}
+
+.sellitems li .sellimg {
+  width: 100%;
+  height: 288px;
+  line-height: 288px;
+  text-align: center;
+}
+
+.sellitems li .sellimg a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sellitems li .sellinfo {
+  padding: 0 12px;
+  line-height: 40px;
+  height: 40px;
+}
+
+.sellitems li .sellinfo a {
+  color: #666;
+  float: left;
+  font-size: 14px;
+  color: #666;
+  max-width: 50%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sellitems li .sellinfo > span {
+  color: #f90;
+  margin-right: 5px;
+  float: left;
+}
+
+.sellitems li .sellinfo span {
+  display: inline-block;
+  margin-left: 0;
+  color: #999;
+  cursor: pointer;
+}
+
+.sellitems li .sellinfo p {
+  margin-left: 4px;
+  display: inline-block;
+}
+
+.sellitems li .sellinfo a:hover, .sellitems li .sellinfo p span:hover {
+  color: #19b955;
+}
+
+.softwarp .softdown, .softwarp .ask {
+  width: 50%;
+  float: left;
+}
+
+.selltype {
+  margin-top: 60px;
+  margin-bottom: 16px;
+}
+
+.selltype h3 {
+  float: left;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.selltype .sellmore-items {
+  float: right;
+}
+
+.selltype .sellmore-items a {
+  color: #999;
+  margin-right: 4px;
+}
+
+/* 软件下载表格 */
+.tab-body {
+  background: #fff;
+  padding: 10px 16px;
+  min-height: 360.5px;
+  line-height: 30px;
+}
+
+.tab-body ul li:first-of-type {
+  color: #19b519;
+}
+
+.tab-body ul li span {
+  display: block;
+  float: left;
+}
+
+.tab-body ul li .item-1 {
+  width: 76%;
+  text-align: left;
+}
+
+.tab-body ul li .item-2, .tab-body ul li .item-3 {
+  float: right;
+  text-align: center;
+  width: 12%;
+}
+
+.tab-body ul li a:hover {
+  color: #19b519;
+}
+
+.softdown {
+  padding-right: 10px;
+}
+
+.ask .askwrap {
+  padding-left: 10px;
+}
+
+/* 友链 */
+.friendlinkwrap h3 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.friendlinkwrap h3 span {
+  font-size: 14px;
+  color: #999;
+  font-weight: normal;
+}
+
+.friendlinkwrap a {
+  margin-right: 10px;
+  line-height: 30px;
+}
+
+/* 底部版权 */
+.footer {
+  margin-top: 40px;
+  padding: 35px 0;
+  background: #333;
+}
+
+.footerwarp {
+  width: 1200px;
+}
+
+.footerwarp ul li {
+  float: left;
+  margin-right: 100px;
+}
+
+.footerwarp ul li a {
+  display: block;
+  font-size: 14px;
+  line-height: 30px;
+  color: #999;
+}
+
+.footerwarp ul li span {
+  font-size: px;
+  color: #fff;
+}
+
+.copy {
+  background: #333;
+}
+
+.copywarp {
+  width: 1200px;
+  border-top: 1px solid #999;
+  text-align: center;
+}
+
+.copywarp p {
+  line-height: 30px;
+  color: #999;
+}
+
+.copywarp p a {
+  color: #999;
 }
