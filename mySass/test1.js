@@ -105,3 +105,80 @@ $(function(){
     // });
       
 });
+
+
+// tab选项卡
+$(function(){
+    var tabTitle = $('.act'),
+        list = $('.act > ul > li'),
+        tabBody = $('.act > .tab-body');
+    tabTitle.on('mouseover', 'li', function(e){
+        e.preventDefault();
+        var self = $(this),
+            index = self.index();
+        for(var i =0; i<list.length; i++){
+            list[i].className = '';
+            $(tabBody[i]).css('display', 'none');
+        }
+        self.addClass('active');
+        $(tabBody[index]).css('display', 'block');
+    });
+    
+});
+
+
+$(function(){
+    var tabRank = $('.rank'),
+        tabLi = $('.rank > ul')
+        list = $('.rank > ul').children(),
+        tabBody = $('.rank > .tab-body');
+
+    tabLi.on('mouseover', 'li', function(e){
+        e.preventDefault();
+        var self = $(this),
+            index = self.index();
+        for(var i =0; i<list.length; i++){
+            list[i].className = '';
+            $(tabBody[i]).css('display', 'none');
+        }
+        self.addClass('active');
+        $(tabBody[index]).css('display', 'block');
+    });
+    
+});
+
+// 软件下载
+$(function(){
+    var tab = $('.sellmore-items'),
+        tabLi = $('.sellmore-items > a')
+        tabBody = $('.softdown > .tab-body');
+
+    tab.on('mouseover', 'a', function(e){
+        e.preventDefault();
+        var self = $(this),
+            index = self.index();
+        for(var i =0; i<tabLi.length; i++){
+            tabLi[i].className = '';
+            $(tabBody[i]).css('display', 'none');
+        }
+        self.addClass('activetitle');
+        $(tabBody[index]).css('display', 'block');
+    });
+
+    tabBody.on('click', 'div', function(e){
+        $(this).parent().css('min-height', '560px');
+        console($(tabBody).child());
+        $(tabBody).child().attr('display', 'list-item');
+        $(this).html('<span>收起</span><i class="iconfont">&#xe731;</i>');
+    })
+    
+});
+
+
+
+
+
+
+
+
+

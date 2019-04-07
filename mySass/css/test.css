@@ -808,6 +808,10 @@ textarea {
   color: #19b955;
 }
 
+.act {
+  height: 158px;
+}
+
 .tab .tab-body {
   padding: 10px 15px;
   color: #999;
@@ -981,12 +985,12 @@ textarea {
   position: relative;
   float: left;
   width: 16.66%;
-  background: #fff;
 }
 
 .sellitems li .selllist {
   margin: 7px;
   border: solid 1px #f5f5f5;
+  background: #fff;
 }
 
 .sellitems li .selllist:hover {
@@ -1066,45 +1070,55 @@ textarea {
   float: right;
 }
 
+.selltype .sellmore-items a.activetitle {
+  color: #19b955;
+}
+
 .selltype .sellmore-items a {
   color: #999;
   margin-right: 4px;
 }
 
 /* 软件下载表格 */
-.tab-body {
+.softask .tab-body {
   background: #fff;
   padding: 10px 16px;
   min-height: 360.5px;
   line-height: 30px;
 }
 
-.tab-body ul li:first-of-type {
+.softask .tab-body ul li:first-of-type {
   color: #19b519;
 }
 
-.tab-body ul li span {
+.softask .tab-body ul li span {
   display: block;
   float: left;
 }
 
-.tab-body ul li .item-1 {
+.softask .tab-body ul li .item-1 {
   width: 76%;
   text-align: left;
 }
 
-.tab-body ul li .item-2, .tab-body ul li .item-3 {
+.softask .tab-body ul li .item-2, .softask .tab-body ul li .item-3 {
   float: right;
   text-align: center;
   width: 12%;
 }
 
-.tab-body ul li a:hover {
+.softask .tab-body ul li a:hover {
   color: #19b519;
 }
 
 .softdown {
   padding-right: 10px;
+}
+
+.moresoft {
+  margin-bottom: 0;
+  width: 60px;
+  cursor: pointer;
 }
 
 .ask .askwrap {
@@ -1157,6 +1171,33 @@ textarea {
   color: #fff;
 }
 
+/* 底部时间 */
+.footertime {
+  color: #999;
+}
+
+.footerabout {
+  text-align: center;
+}
+
+.footerabout p img {
+  width: 120px;
+  height: 120px;
+}
+
+.time {
+  margin-left: 10px;
+}
+
+.time h4 {
+  font-size: 20px;
+}
+
+.footer-tel {
+  font-size: 26px;
+}
+
+/* 底部版权 */
 .copy {
   background: #333;
 }
@@ -1165,6 +1206,7 @@ textarea {
   width: 1200px;
   border-top: 1px solid #999;
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .copywarp p {
@@ -1174,4 +1216,43 @@ textarea {
 
 .copywarp p a {
   color: #999;
+}
+
+/* 安全保障 */
+.footer-bg {
+  height: 60px;
+  background: #333;
+}
+
+.cred {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.cred a {
+  display: inline-block;
+  margin-right: 10px;
+  width: 81px;
+  height: 30px;
+  background: url("../images/bg-1.png") no-repeat;
+}
+
+a.bg-kxwz {
+  background-position: -10px -300px;
+}
+
+a.bg-aqlm {
+  background-position: -111px -300px;
+}
+
+a.bg-360 {
+  background-position: -10px -250px;
+}
+
+a.bg-zdzyy {
+  background-position: -111px -250px;
+}
+
+a.bg-qgaq {
+  background-position: -10px -350px;
 }
