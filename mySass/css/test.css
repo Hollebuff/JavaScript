@@ -25,6 +25,7 @@ body {
   color: #333;
   margin: 0 auto;
   background: #f6f6f6;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -387,7 +388,7 @@ textarea {
 
 /* logo和搜索框 */
 .logosearch {
-  margin-top: 40px;
+  padding-top: 40px;
   height: 88px;
   background: white;
 }
@@ -504,7 +505,27 @@ textarea {
 }
 
 .nav {
-  margin-top: 40px;
+  padding-top: 40px;
+  background: #fff;
+}
+
+/* 滚动固定起来nav */
+.bannav {
+  display: none;
+  width: 100%;
+  z-index: 999;
+  height: 45px;
+  background: #fff;
+}
+
+.totop {
+  position: fixed;
+  top: 0px;
+  display: block;
+}
+
+.navitems {
+  height: 45px;
 }
 
 .navitems > li {
@@ -694,7 +715,10 @@ textarea {
 .nav-bannar > ul > li {
   font-size: 16px;
   color: #fff;
-  padding-left: 35px;
+}
+
+.nav-bannar > ul > li :hover {
+  background: #19b955;
 }
 
 .nav-bannar > ul > li > a {
@@ -707,6 +731,7 @@ textarea {
 
 .nav-bannar > ul > li > a > i {
   margin-right: 12px;
+  margin-left: 35px;
 }
 
 .wire {
@@ -867,6 +892,10 @@ textarea {
   margin: 0 210px;
 }
 
+.bannar:hover .control-nav {
+  opacity: 1;
+}
+
 .flexslider {
   background: #fff;
   position: relative;
@@ -901,6 +930,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+  opacity: 0;
 }
 
 .control-nav li a {
@@ -930,9 +960,9 @@ textarea {
 }
 
 .flex-control-paging a {
-  width: 10px;
-  height: 10px;
-  line-height: 10px;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
   display: block;
   cursor: pointer;
   border: solid 2px #fff;
@@ -1012,7 +1042,7 @@ textarea {
 }
 
 .sellitems li .sellinfo {
-  padding: 0 12px;
+  padding: 0 4px;
   line-height: 40px;
   height: 40px;
 }
@@ -1022,7 +1052,7 @@ textarea {
   float: left;
   font-size: 14px;
   color: #666;
-  max-width: 50%;
+  max-width: 54%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1042,8 +1072,9 @@ textarea {
 }
 
 .sellitems li .sellinfo p {
-  margin-left: 4px;
-  display: inline-block;
+  margin-right: 4px;
+  float: right;
+  display: block;
 }
 
 .sellitems li .sellinfo a:hover, .sellitems li .sellinfo p span:hover {
@@ -1064,6 +1095,11 @@ textarea {
   float: left;
   font-size: 24px;
   font-weight: normal;
+}
+
+.selltype > a {
+  float: right;
+  color: #999;
 }
 
 .selltype .sellmore-items {
@@ -1141,6 +1177,7 @@ textarea {
 .friendlinkwrap a {
   margin-right: 10px;
   line-height: 30px;
+  color: #999;
 }
 
 /* 底部版权 */
@@ -1255,4 +1292,56 @@ a.bg-zdzyy {
 
 a.bg-qgaq {
   background-position: -10px -350px;
+}
+
+/* 弹窗广告 */
+.popad {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 99;
+  transform: translate(-50%, -45%);
+}
+
+.popad .popwrap {
+  position: relative;
+}
+
+.popad .popwrap span {
+  position: absolute;
+  display: block;
+  z-index: 999;
+  right: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  background: url("../images/icon.png") no-repeat;
+  background-position: -149px -31px;
+}
+
+/* 侧边客服 */
+.sidebar {
+  position: fixed;
+  z-index: 999;
+  bottom: 25%;
+  right: 1%;
+}
+
+.sidebar .sidebarwarp {
+  border: 1px solid #e2e2e2;
+  box-shadow: -2px 0 4px #ddd;
+}
+
+.sidebar .sidebarwarp a {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  background: #fff;
+  color: #999;
+}
+
+.sidebar .sidebarwarp a:hover {
+  background: #19b955;
+  color: #fff;
 }

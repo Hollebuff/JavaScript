@@ -22,6 +22,7 @@ body {
     color:#333;
     margin: 0 auto;
     background: #f6f6f6;
+    position: relative;
 }
 h1, h2, h3, h4, h5, h6{font-weight:normal;}
 
@@ -368,10 +369,12 @@ $marginCenter: 0 auto;
 
 /* logo和搜索框 */
 .logosearch{
-    margin-top: 40px;
+    padding-top: 40px;
+
     height: 88px;
     background: white;
     .logosearch-warp{
+        // padding-top: 40px;
         position: relative;
         height: 88px;
         @extend .tocenter;
@@ -475,10 +478,26 @@ $selecthigth:36px;
 }   
 
 .nav{
-    margin-top: 40px;
+    padding-top: 40px;
+    background: #fff;
+}
+
+/* 滚动固定起来nav */
+.bannav{
+    display: none;
+    width: 100%;
+    z-index: 999;
+    height: 45px;
+    background: #fff;
+}
+.totop{
+    position: fixed;
+    top: 0px;
+    display: block;
 }
 
 .navitems{ 
+    height: 45px;
     & > li{
         float: left;
         position: relative;
@@ -651,7 +670,10 @@ $selecthigth:36px;
     & > ul >li{
         font-size: 16px;
         color: #fff;
-        padding-left: 35px;
+        // padding-left: 35px;
+        & :hover{
+            background: #19b955;
+        }
         & > a{
             color: #fff;
             height: 42px;
@@ -660,6 +682,7 @@ $selecthigth:36px;
             display: inline-block;
             & > i{
                 margin-right: 12px;
+                margin-left: 35px;
             } 
         }
     }
@@ -828,6 +851,9 @@ $selecthigth:36px;
     position: relative;
     height: 670px;
     margin: 0 210px;
+    &:hover .control-nav{
+        opacity: 1;
+    }
 
 }
 .flexslider{
@@ -859,7 +885,8 @@ $selecthigth:36px;
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 20px;  
+    opacity: 0;
     li{
         a{
             font-size: 68px;
@@ -881,6 +908,7 @@ $selecthigth:36px;
         margin: 0 5px;
         zoom: 1;
         display: inline-block;
+
     }
 }
 .flex-control-paging{
@@ -888,9 +916,9 @@ $selecthigth:36px;
     padding: 0;
     list-style: none;
     a{
-        width: 10px;
-        height: 10px;
-        line-height: 10px;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
         display: block;
         cursor: pointer;
         border: solid 2px #fff;
@@ -915,8 +943,8 @@ $selecthigth:36px;
 }
 // .aditems-i
 /* 商品分类列表 */
-.sell{
-}
+// .sell{
+// }
 .sellwarp{
     .selltype{
         margin-top: 60px;
@@ -964,7 +992,7 @@ $selecthigth:36px;
         }
 
         .sellinfo{
-            padding: 0 12px;
+            padding: 0 4px;
             line-height: 40px;
             height: 40px;
             a{
@@ -972,7 +1000,7 @@ $selecthigth:36px;
                 float: left;
                 font-size: 14px;
                 color: #666;
-                max-width: 50%;
+                max-width: 54%;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
@@ -990,15 +1018,15 @@ $selecthigth:36px;
                 cursor: pointer;
             }
             p{
-                margin-left: 4px;
-                display: inline-block;
+                margin-right: 4px;
+                float: right;
+                display: block;
             }
             a:hover, p span:hover{
                 color: #19b955
             }
         }
     }
-
 }
 
 // 软件下载
@@ -1017,6 +1045,11 @@ $selecthigth:36px;
         float: left;
         font-size: 24px;
         font-weight: normal ;
+
+    }
+    & > a{
+        float: right;
+        color: #999;
 
     }
     .sellmore-items{
@@ -1092,6 +1125,8 @@ $selecthigth:36px;
     a{
         margin-right: 10px;
         line-height: 30px;
+        color: #999;
+
     }
 }
 
@@ -1198,6 +1233,54 @@ a.bg-zdzyy{
 }
 a.bg-qgaq{
     background-position: -10px -350px;
+}
+
+/* 弹窗广告 */
+.popad{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 99;
+    transform: translate(-50%, -45%);
+    .popwrap{
+        position: relative;
+        span{
+            position: absolute;
+            display: block;
+            z-index: 999;
+            right: -15px;
+            top: -15px;
+            width: 30px;
+            height: 30px;
+            background: url('../images/icon.png') no-repeat;
+            background-position:  -149px -31px;
+        }
+    }
+}
+
+/* 侧边客服 */
+.sidebar{
+    position: fixed;
+    z-index: 999;
+    bottom: 25%;
+    right: 1%;
+    .sidebarwarp{
+        border: 1px solid #e2e2e2;
+        box-shadow: -2px 0 4px #ddd;
+        a{
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #e5e5e5;
+            text-align: center;
+            background: #fff;
+            color: #999;
+            &:hover{
+                background: #19b955;
+                color: #fff;
+            }
+        }
+        
+    }
 }
 
 

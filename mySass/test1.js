@@ -8,102 +8,120 @@ $(function(){
         controlNub = $('.flex-control-nav'),
         prev = $('.flex-nav-prev'),
         next = $('.flex-nav-next'),
-        index = 1;
-    var timer;
+        index = 1;  //图片序号
+    var timer = null;
 
-    // 下标
-    function lookOn(j){
-        for(var i=0; i<imgsLenght; i++){
-            controlNub.removeClass('activeon');
-        }
-        controlNub.eq(j).addClass('activeon');
-    }
-    // 上一张
-    function prevPlay(){
-        // 大于图片长度。
-        if(index == 1 ){
-            bannarItems.css({
-                'transition-duration':'1ms',
-                'transition-timing-function': 'ease-out' ,
-                'transform': 'translatex(-'+ widthimg*imgsLenght + 'px, 0, 0)',
-            });
-            console.log(index, bannarItems[0]);
-
-            index = imgsLenght;
-            lookOn(imgsLenght);
-            // bannarItems[0].style.cssText = "transition-duration: 500ms;transition-timing-function: ease-out;transform: translatex(-"+   widthimg+ "px)";
-        }                
-        else{
-            bannarItems.css({
-                'transition-duration':'500ms',
-                'transition-timing-function': 'ease-out' ,
-                'transform': 'translatex(-' +(index-1)*1293 +'px, 0, 0)',
-            });
-            console.log(index, bannarItems[0]);
-        }
-    }
     // 下一张
     function nextPlay(){
-        if(index == imgsLenght ){
+        // clearInterval(timer)
+        if(index > imgsLenght ){
             bannarItems.css({
-                'transition-duration':'1ms',
+                'transition-duration':'0',
                 'transition-timing-function': 'ease-out' ,
                 'transform': 'translate3d(-' + 0 + 'px, 0, 0)'
             });
-            // bannarItems[0].style.cssText = "width:1800%; transition-duration: 500ms;transition-timing-function: ease-out; transform: translateX(-"+ -widthimg + "px)";
+// bannarItems[0].style.cssText = "width:1800%; transition-duration: 500ms;transition-timing-function: ease-out; transform: translateX(-"+ -widthimg + "px)";
+            index = 1;            
             console.log(index, bannarItems[0]);
-            index = 1;
-        }                
-
+        }
         else{
             bannarItems.css({
                 'transition-duration':'500ms',
                 'transition-timing-function': 'ease-out' ,
                 'transform': 'translate3d(-' +(index-1)*widthimg +'px, 0, 0)'
             });
-            // bannarItems[0].style.cssText = "width:1800%; transition-duration: 500ms;transition-timing-function: ease-out;transform: translateX(-"+ (index-1)*1293+ "px)";
+// bannarItems[0].style.cssText = "width:1800%; transition-duration: 500ms;transition-timing-function: ease-out;transform: translateX(-"+ (index-1)*1293+ "px)";
+            console.log(index, bannarItems[0], typeof(widthimg));
+        }
+    }
+
+    // 上一张
+    function prevPlay(){
+        if(index == 0 ){
+            bannarItems.css({
+                'transition-duration':'1ms',
+                'transition-timing-function': 'ease-out' ,
+                'transform': 'translate3d(-'+ widthimg*(imgsLenght-1) + 'px, 0, 0)',
+            });
+            console.log(index, bannarItems[0]);
+            index = imgsLenght;
+            // bannarItems[0].style.cssText = "transition-duration: 500ms;transition-timing-function: ease-out;transform: translatex(-"+   widthimg+ "px)";
+        }                
+        else{
+            bannarItems.css({
+                'transition-duration':'500ms',
+                'transition-timing-function': 'ease-out' ,
+                'transform': 'translate3d(-' +(index-1)*widthimg +'px, 0, 0)',
+            });
             console.log(index, bannarItems[0], typeof(widthimg));
         }
     }
 
     // 点击上一张
     prev.on('click', function(){
-        index -= 1;
+        index = index - 1;
         prevPlay();
-        lookOn(index);
+        lookOn(parseInt(index));
     });
     // 下一张
     next.on('click', function(){
-        index += 1;
+        index =index + 1;
         nextPlay();
-        lookOn(index);
+        lookOn(parseInt(index));
     });  
-    
+
     // 动态添加底部原点数量
     for(var i=0; i<imgsLenght; i++){
         controlNub.append($('<li><a href="javascript:;"></a></li>'))
     }
+    var lidot = $('.flex-control-paging > li > a');
+    $(lidot[0]).addClass('activeon');
 
-    // rs = setInterval('nextPlay()', 1);
-    // clearInterval(rs);
+    // 底部圆点
+    controlNub.on('mouseover', 'li', function(){
+        event.preventDefault;
+        var self = $(this),
+            indexnub = self.index();
+        index = indexnub + 1;
+        prevPlay();
+        lookOn(parseInt(index));
+        bannar.mouseover(function(){
+            clearInterval(timer);
+        });
+    });
+
+    // 下标
+    function lookOn(j){
+        for(var i=0; i<imgsLenght; i++){
+            $(lidot[i]).removeClass('activeon');
+        }
+        $(lidot[j-1]).addClass('activeon');
+    }
 
     // 自动播放
-    // function animationPaly(){
-    //     index +=1;
-    //     timer = setInterval(function(){
-    //         next.onclick;
-    //     },3000)        
-    // }
+    timer=setInterval(function(){ //打开定时器
+        index++;    //让图片的索引值次序加1，这样就可以实现顺序轮播图片
+        if(index > imgsLenght){ //当到达最后一张图的时候，让index赋值为第一张图的索引值，轮播效果跳转到第一张图重新开始
+            index=1;
+        }
+        prevPlay();
+        lookOn(parseInt(index));
+    },2000); //2000为轮播的时间
 
-    // bannar.on({
-    //     mouseover:function(){
-    //         clearInterval(timer);
-    //     },
-    //     mouseout:function(){
-    //         animationPaly();
-    //     }
-    // });
-      
+    bannar.mouseover(function(){
+        clearInterval(timer);
+    });
+    
+    bannar.mouseout(function(){
+        timer=setInterval(function(){ //打开定时器
+            index++;    //让图片的索引值次序加1，这样就可以实现顺序轮播图片
+            if(index > imgsLenght){ //当到达最后一张图的时候，让index赋值为第一张图的索引值，轮播效果跳转到第一张图重新开始
+                index=1;
+            }
+            prevPlay();
+            lookOn(parseInt(index));
+        },3000); //2000为轮播的时间
+    })
 });
 
 
@@ -122,14 +140,12 @@ $(function(){
         }
         self.addClass('active');
         $(tabBody[index]).css('display', 'block');
-    });
-    
+    }); 
 });
-
 
 $(function(){
     var tabRank = $('.rank'),
-        tabLi = $('.rank > ul')
+        tabLi = $('.rank > ul'),
         list = $('.rank > ul').children(),
         tabBody = $('.rank > .tab-body');
 
@@ -147,17 +163,18 @@ $(function(){
     
 });
 
-// 软件下载
+// 软件下载tab
 $(function(){
-    var tab = $('.sellmore-items'),
-        tabLi = $('.sellmore-items > a')
-        tabBody = $('.softdown > .tab-body');
-
+    var tab = $('.softwarp .sellmore-items'),
+        tabLi = $('.softwarp .sellmore-items > a')
+        tabBody = $('.softaskbox > .tab-body');
+        
+        showLi = true;
     tab.on('mouseover', 'a', function(e){
         e.preventDefault();
         var self = $(this),
             index = self.index();
-        for(var i =0; i<tabLi.length; i++){
+        for(var i =0; i<tabLi.length-1; i++){
             tabLi[i].className = '';
             $(tabBody[i]).css('display', 'none');
         }
@@ -166,17 +183,51 @@ $(function(){
     });
 
     tabBody.on('click', 'div', function(e){
-        $(this).parent().css('min-height', '560px');
-        console($(tabBody).child());
-        $(tabBody).child().attr('display', 'list-item');
-        $(this).html('<span>收起</span><i class="iconfont">&#xe731;</i>');
+        var Status = $(this).attr('data-status');
+        if(Status == '1'){
+            $(this).siblings().children('[style="display: none;"]').css('display',"list-item");
+            $(this).html('<span>收起</span><i class="iconfont">&#xe731;</i>').attr('data-status', "0");
+        }
+        else{
+            $(this).siblings().children('[style="display: list-item;"]').css('display',"none");
+            $(this).html('<span>展开</span><i class="iconfont">&#xe731;</i>').attr('data-status', "1");
+        }
     })
-    
 });
 
 
+// 关闭弹窗
+$(function(){
+    $('.closepop').on('click',function(e){
+        $('.popad').fadeOut(500);
+    });
+});
+
+// cookie JQ操作需要引入JQ的cookie文件，显得冗杂
+function getCookis(){
+    // 设置cookis 过期时间
+    var date = new Date();
+    date.setDate(date.getDate() + 7);
+    document.cookie = "username=123; expires=" + date;
+    console.log(document.cookie);
+}getCookis();
 
 
+// 滚动事件性能问题
+$(window).scroll(function () {
+    var timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+        var nav = $('.bannav'),
+        scroH = $(document).scrollTop();
+        if(scroH > 300){
+            $(nav).addClass("totop");
+        }
+        else if(scroH < 300){
+            $(nav).removeClass("totop");
+        }
+    }, 50);
+});
 
 
 
