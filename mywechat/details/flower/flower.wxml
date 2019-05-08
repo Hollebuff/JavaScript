@@ -1,0 +1,39 @@
+<!--details/flower/flower.wxml-->
+<!-- <text>details/flower/flower.wxml</text> -->
+<!-- 鲜花详情页 -->
+<!-- head -->
+<view class='flowerheader'>
+  <image class='flowerimg' style="width: 200rpx; height: 200rpx;" src='{{flowerImg}}'></image>
+  <text class='flowerTitle'>{{flowerTitle}}</text>
+</view>
+
+<view class='content'>
+  <!-- 花语 -->
+  <view>
+    <view class='subtitle'>花语</view>
+    <view class='suecontent'>{{flowerLang}}</view>
+  </view>
+
+  <!-- 上市季节 -->
+  <view>
+    <view class='subtitle'>上市时间</view>
+    <view class='suecontent'>{{time}}</view>
+  </view>
+
+    <!-- 鲜花图片 -->
+    <view>
+      <view class='subtitle'>鲜花图片</view>
+      <image class='flowerimgitem' 
+        style="width: 200rpx; height: 200rpx;" 
+        wx:for="{{flowerImgItem}}" wx:key="{{key}}"
+        src='{{item}}'>
+      </image> 
+    </view>
+</view>
+
+
+<!-- footer -->
+<!-- 底部版权 -->
+<view class='footer'>
+  <footer></footer>
+</view>

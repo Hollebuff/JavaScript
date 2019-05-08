@@ -1,0 +1,10 @@
+<view class="container">
+  <view>
+    <text>常见鲜花</text>
+  </view>
+  <image class="user_image" src="/images/avatar/4.png"></image>
+  <text class="user_text">hello,10月</text>
+  <view class="user_moto" bindtap="OnTap">
+  <text class="moto">开启小程序</text>
+  </view>
+</view>

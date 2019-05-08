@@ -1,0 +1,16 @@
+/* details/article/article.wxss */
+.title{
+  padding: 6rpx 20rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+
+}
+.info{
+  text-align: center;
+  font-size: 24rpx;
+}
+.article{
+  font-size: 28rpx;
+  padding: 0 10rpx;
+  text-indent: 2em;
+}

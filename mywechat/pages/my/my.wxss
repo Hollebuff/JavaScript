@@ -1,0 +1,46 @@
+/* pages/my/my.wxss */
+.head{
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+
+.headimg{
+  margin-left: 80rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+}
+
+/* 技能 */
+.mymain{
+  margin-top: 20rpx;
+}
+.wrap{
+  box-sizing: border-box;
+  float: left;
+  width: 186rpx;
+  height: 186rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid  #f6f6f6;
+
+}
+
+.itemimg{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.itemname{
+  display: block;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.footers{
+  margin-bottom: 0;
+}

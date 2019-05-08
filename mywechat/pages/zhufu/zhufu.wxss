@@ -1,0 +1,29 @@
+/* pages/zhufu/zhufu.wxss */
+.content{
+  float: left;
+  margin-left: 10px;
+}
+.sub-title{
+  margin-bottom: 10px;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-left: 12rpx;
+}
+.item{
+  margin-left: 10px;
+}
+.title-list{
+  margin: 10px 0;
+  font-size: 16px;
+}
+.article-list{
+  width: 260px;
+  font-size: 14px;
+  margin-left: 10px;
+  margin: 6px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: normal;
+
+}

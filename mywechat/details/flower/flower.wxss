@@ -1,0 +1,22 @@
+/* details/flower/flower.wxss */
+/* 头部 */
+.flowerheader{text-align: center;}
+
+.flowerTitle{
+  line-height: 100px;
+}
+
+.subtitle{
+  margin-left: 10px;
+  border-bottom: 1px solid #999;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.suecontent{
+  padding: 10px;
+  font-size: 14px;
+}
+.flowerimgitem{
+  margin: 6px;
+}

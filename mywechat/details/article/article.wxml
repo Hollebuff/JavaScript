@@ -1,0 +1,20 @@
+<!--details/article/article.wxml-->
+<!-- <text>details/article/article.wxml</text> -->
+<!-- 种植方法 -->
+
+<!-- 基本信息 -->
+<view>
+<view class='title'>{{articleTitle}} 如何种植玫瑰花呢？如何如何和或或或</view>
+<view class='info'><text>阅读{{readeNub}}</text> <text>{{articleTime}}</text></view>
+</view>
+
+<!-- 内容 -->
+<view class='article'>
+  <text>{{articleConent}}佛系种植佛系种植佛佛系种植佛系种植佛系种植佛系种植佛系种植佛系种植佛系种植佛系种植佛系种植佛系种植佛系种植佛系种植系种植佛系种植
+  </text>
+
+</view>
+
+<view>
+<footer></footer>
+</view>

@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<!-- 首页侧边导航 -->
+<view class='huawarp clearfix'>
+  <view class='flowerName'>
+    <view class='subtitle'>
+      <!-- <text>常见鲜花</text> -->
+    </view>
+    <view wx:for="{{flowerNames}}" wx:key="key">
+      <view class='hualist'>{{item.name}}</view>
+    </view>
+  </view>
+
+  <!-- 首页鲜花内容图片 -->
+  <view class='main'>
+    <view class='clearfix'>
+      <view class='subtitle'>鲜花大全</view>
+      <!-- 鲜花列表 -->
+      <view class='flower-list'>
+        <view wx:for="{{flowerArr}}" wx:key="key" class='flowerwrap'>
+
+          <view bindtap='toDetails' data-index="{{index}}" class='flowerimg'>
+            <image style="width: 180rpx; height: 180rpx;" src='{{item.src}}'></image>
+          </view>
+
+          <view class='flowerinfo'>
+            <text class='flower-name'>{{item.title}}</text>
+            <text class='flower-tag'>{{item.tag}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 花语 -->
+    <view class='article cleatfix'>
+      <view class='subtitle'>鲜花种植方法</view>
+      <view class='articlewrap' wx:for="{{articleArr}}" wx:key="key">
+        <view class='newsList' bindtap='toArticle' data-title="{{item.title}}" data-index="{{index}}">{{item.title}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 鲜花资讯 -->
+    <view class='news'>
+      <view class='subtitle'>鲜花资讯</view>
+      <view class='newswrap' wx:for="{{newsArr}}" wx:key="key">
+        <view class='newsList' bindtap='toNews'>{{item.newsTitle}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+
+<!-- 底部版权 -->
+<view class='footer'>
+  <footer></footer>
+</view>

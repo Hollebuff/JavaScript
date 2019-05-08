@@ -1,0 +1,11 @@
+<!--component/zujian/zujian.wxml-->
+<!-- <text>component/zujian/zujian.wxml</text> -->
+<!-- 页面底部公共部分组件 -->
+<!--版权  联系电话 -->
+<!-- 联系地址 -->
+<!-- 公司名称 -->
+<view class='footer'>
+  <view><text>礼仪帮版权所有</text> <text>400-200-200</text></view>
+  <view><text>深圳市京基大厦2010室</text></view>
+  <view><text>深圳市礼仪帮责任有限公司</text></view>
+</view>

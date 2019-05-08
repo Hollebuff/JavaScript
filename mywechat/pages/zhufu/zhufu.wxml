@@ -1,0 +1,24 @@
+<!--pages/zhufu/zhufu.wxml-->
+<!-- <text>pages/zhufu/zhufu.wxml</text> -->
+<view class='clearfix'>
+  <view class='flowerName'>
+    <view class='subtitle'>
+        <!-- <text>常见鲜花</text> -->
+    </view>
+    <view wx:for="{{menu}}" wx:key="key">
+      <view class='hualist'>{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 祝福语 -->
+  <view class='content'>
+    <view class='sub-title' wx:for="{{hunArr}}" wx:key="key">
+      <view class='title-list'>{{item['title']}}</view>
+      <view class='article-list' wx:key="id" wx:for="{{item.hunArticle}}">{{item.article}}</view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <footer></footer>
+</view>

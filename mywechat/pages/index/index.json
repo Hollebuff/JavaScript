@@ -1,0 +1,7 @@
+{
+  "usingComponents": 
+  {
+    "footer": "/component/footer/footer"
+  },
+  "navigationBarTitleText": "鲜花品种大全"
+}

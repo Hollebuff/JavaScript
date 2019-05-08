@@ -1,0 +1,80 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+
+/* 鲜花列表 */
+.main{
+  float: left;
+  width: 646rpx;
+}
+.flowerimg{
+  text-align: center;
+}
+
+
+.flowerwrap{
+  float: left;
+  width: 214rpx;
+
+
+}
+
+.flowerinfo{
+  text-align: center;
+}
+.flower-name{
+  font-size: 32rpx;
+
+
+}
+.flower-tag{
+  margin-left: 4rpx;
+  font-size: 24rpx;
+}
+
+/* 鲜花详情页 */
+.article{
+  margin-top: 20px;
+  font-weight: normal;
+}
+
+.articlewrap{
+  margin: 0 6px 10px 12rpx;
+  font-size: 28rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 鲜花资讯 */
+.news{
+  margin-left: 6px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.newsList{
+  font-size: 28rpx;
+  padding: 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

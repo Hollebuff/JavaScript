@@ -1,0 +1,16 @@
+/* pages/skill/skill.wxss */
+.content{
+  float: left;
+  margin-left: 16rpx;
+}
+.wrap{
+  margin-bottom: 16rpx;
+}
+.items{
+  padding-right: 12rpx;
+  font-size: 28rpx;
+  padding-left: 6rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
