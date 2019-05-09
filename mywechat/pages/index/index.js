@@ -4,7 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    // str: [],
     motto: '鲜花祝福助手',
     userInfo: {},
     hasUserInfo: false,
@@ -21,36 +20,6 @@ Page({
       },
       {
         name: "勿忘我"
-      },
-      {
-        name: "荔枝"
-      },
-      {
-        name: "百何"
-      },
-      {
-        name: "菊花"
-      },
-      {
-        name: "勿忘我"
-      },
-      {
-        name: "荔枝"
-      },
-      {
-        name: "百何"
-      },
-      {
-        name: "菊花"
-      },
-      {
-        name: "勿忘我"
-      },
-      {
-        name: "荔枝"
-      },
-      {
-        name: "百何"
       },
       {
         name: "菊花"
@@ -139,9 +108,7 @@ Page({
       }
     ]
   },
-  // data:{
-    
-  // },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -186,6 +153,29 @@ Page({
       success: function () { },       //成功后的回调；
       fail: function () { },         //失败后的回调；
       complete: function () { }      //结束后的回调(成功，失败都会执行)
+    })
+  },
+
+  // 侧栏菜单点击
+  onSelect: function(e){
+    console.log(this.data[1])
+
+    this.setData({
+      flowerArr:[
+        {
+          title: '蓝玫瑰',
+          tag:"爱情",
+          src: '/images/flower.jpg'
+        },
+        {
+          title: '蓝玫瑰',
+          tag: "爱情",
+          src: '/images/flower.jpg'
+        }
+      ],
+      articleArr:"",
+      newsArr:"",
+
     })
   },
 

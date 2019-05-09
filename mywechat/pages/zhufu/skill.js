@@ -1,4 +1,4 @@
-// pages/hua/hua.js
+// pages/zhufu/skill.js
 Page({
 
   /**

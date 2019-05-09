@@ -1,12 +1,10 @@
 <!--index.wxml-->
+<view class='fixbox'>
 <!-- 首页侧边导航 -->
 <view class='huawarp clearfix'>
   <view class='flowerName'>
-    <view class='subtitle'>
-      <!-- <text>常见鲜花</text> -->
-    </view>
     <view wx:for="{{flowerNames}}" wx:key="key">
-      <view class='hualist'>{{item.name}}</view>
+      <view class='hualist' bindtap='onSelect' >{{item.name}}</view>
     </view>
   </view>
 
@@ -55,4 +53,7 @@
 <!-- 底部版权 -->
 <view class='footer'>
   <footer></footer>
+</view>
+
+
 </view>

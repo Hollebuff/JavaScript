@@ -1,32 +1,35 @@
 <!--pages/my/my.wxml-->
 <!-- <text>pages/my/my.wxml</text> -->
-<view class='clearfix'>
-  <view class='head'>
-    <image class='headimg' src='{{headImg}}'></image>周思思
-  </view>
-</view>
+<view class='fixbox'>
+  <view class='headtop'>
+    <view class='clearfix'>
+      <view class='head'>
+        <image class='headimg' src='{{headImg}}'></image>周思思
+      </view>
+    </view>
 
-<view class='mymain clearfix'>
-  <view class='wrap'>
-    <image class='itemimg' src='/images/me.png'></image>
-    <text class='itemname'>个人中心</text>
+    <view class='mymain clearfix'>
+      <view class='wrap'>
+        <image class='itemimg' src='/images/me.png'></image>
+        <text class='itemname'>个人中心</text>
+      </view>
+      <view  class='wrap'>
+        <image class='itemimg' src='/images/me.png'></image>
+        <text class='itemname'>收藏夹</text>
+      </view>
+      <view class='wrap'>
+        <image class='itemimg' src='/images/me.png'></image>
+        <text class='itemname'>账户信息</text>
+      </view>
+      <view  class='wrap'>
+        <image class='itemimg' src='/images/me.png'></image>
+        <text class='itemname'>退出登录</text>
+      </view>
+    </view>
   </view>
-  <view  class='wrap'>
-    <image class='itemimg' src='/images/me.png'></image>
-    <text class='itemname'>收藏夹</text>
-  </view>
-  <view class='wrap'>
-    <image class='itemimg' src='/images/me.png'></image>
-    <text class='itemname'>账户信息</text>
-  </view>
-  <view  class='wrap'>
-    <image class='itemimg' src='/images/me.png'></image>
-    <text class='itemname'>退出登录</text>
-  </view>
-</view>
 
 
-
-<view class='footers'>
-  <footer></footer>
+  <view>
+    <footer></footer>
+  </view>
 </view>

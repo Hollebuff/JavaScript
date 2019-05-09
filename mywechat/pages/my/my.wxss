@@ -1,4 +1,6 @@
 /* pages/my/my.wxss */
+
+
 .head{
   padding: 0 20rpx;
   font-size: 28rpx;
@@ -26,6 +28,7 @@
   justify-content: center;
   align-items: center;
   border: 2rpx solid  #f6f6f6;
+  margin:0 -2rpx -2rpx 0;
 
 }
 

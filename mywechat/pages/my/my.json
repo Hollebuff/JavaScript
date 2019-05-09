@@ -1,3 +1,4 @@
 {
-  "usingComponents": {"footer": "/component/footer/footer"}
+  "usingComponents": {"footer": "/component/footer/footer"},
+  "navigationBarTitleText": "我"
 }

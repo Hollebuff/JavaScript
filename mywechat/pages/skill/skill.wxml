@@ -1,27 +1,25 @@
 <!--pages/skill/skill.wxml-->
-<view class='clearfix'>
-  <view class='flowerName'>
-    <view class='subtitle'>
-    </view>
-    <view wx:for="{{menu}}" wx:key="key">
-      <view class='hualist'>{{item}}</view>
-    </view>
-  </view>
-
-  <!-- 内容 -->
-  <view class='content'>
-    <view class='wrap' wx:for='{{skillArr}}' wx:key="id">
-      <view class='subtitle'>{{item.title}}</view>
-      <view class='items' wx:for='{{item.articleArr}}' wx:key='id'>
-        {{item.content}}
+<view class='fixbox'>
+  <view class='clearfix'>
+    <view class='flowerName'>
+      <view wx:for="{{menu}}" wx:key="key">
+        <view class='hualist'>{{item}}</view>
       </view>
     </view>
-  
+
+    <!-- 内容 -->
+    <view class='content'>
+      <view class='wrap' wx:for='{{skillArr}}' wx:key="id">
+        <view class='subtitle'>{{item.title}}</view>
+        <view class='items' wx:for='{{item.articleArr}}' wx:key='id'>
+          {{item.content}}
+        </view>
+      </view>
+    
+    </view>
   </view>
 
-
-</view>
-
-<view>
-  <footer></footer>
+  <view class='fixfooter'>
+    <footer></footer>
+  </view>
 </view>

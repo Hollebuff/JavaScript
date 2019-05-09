@@ -1,4 +1,8 @@
  /**app.wxss**/
+ page{
+  background: #fff;
+  height: 100%;
+ }
 .container {
   height: 100%;
   display: flex;
@@ -44,4 +48,14 @@
   font-size: 12px;
   background: #d1d1d1;
   box-shadow: 0 0 2px rgb(230, 228, 228);
+}
+
+
+/* 底部保持固定在页面底部 */
+.fixbox{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }

@@ -8,6 +8,7 @@
 }
 .items{
   padding-right: 12rpx;
+  padding: 12rpx 0;
   font-size: 28rpx;
   padding-left: 6rpx;
   white-space: nowrap;

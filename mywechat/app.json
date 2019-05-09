@@ -1,19 +1,16 @@
 {
   "pages": [
-    
     "pages/logs/logs",
-    "pages/hua/hua",
+    "pages/index/index",
     "pages/zhufu/zhufu",
     "pages/skill/skill",
     "pages/my/my",
-    "pages/index/index",
 
     "component/footer/footer",
-    "component/sider/sider",
+    
     "details/flower/flower",
     "details/article/article",
     "details/skill/skillarticle",
-    
     "details/news/news"
     
   ],
