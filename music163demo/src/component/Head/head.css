@@ -1,0 +1,201 @@
+.head-top{
+    /* position: relative; */
+    /* z-index: 1000; */
+    height: 70px;
+    box-sizing: border-box;
+    background: #242424;
+    border-bottom: 1px solid #000;    
+}
+
+.headnav, .subnav-wrap{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.logo, .nav, .nav-input, .head-other, .head-login{
+    float: left;
+}
+.headnav .logo{
+    float: left;
+    width: 176px;
+    height: 69px;
+    background-position: 0 0;    
+}
+
+
+.headnav .logo-title a{
+    float: left;
+    width: 157px;
+    height: 100%;
+    padding-right: 20px;
+    text-indent: -9999px;    
+}
+
+.nav{
+    float: left;
+}
+.nav li {
+    position: relative;
+    *zoom: 1;
+    background-position: right -300px;
+    float: left;
+    height: 70px;
+    font-size: 14px;
+}
+.nav li:hover{
+    background: #000;
+    text-decoration: none;
+    color: #fff;    
+}
+
+.z-slt{
+    background: #000;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav li a{
+    padding: 0 19px;
+    text-align: center;
+    line-height: 70px;
+    color: #ccc;
+}
+.nav-input, .head-other{
+    height: 70px;
+    line-height: 70px;
+}
+.other{
+    float: left;
+    width: 90px;
+    height: 32px;
+    margin: 19px 0 0 12px;
+    border: 1px solid #4F4F4F;
+    background-position: 0 -140px;
+    line-height: 33px;
+    color: #ccc;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.head-login{
+    float: right;
+    height: 45px;
+    margin: 19px 0 0 20px;
+    padding: 5px 22px 0 0;
+    background-position: right -47px;
+    position: relative;
+}
+
+
+.login{
+    display: block;
+    float: right;
+    width: 28px;
+    color: #787878;    
+}
+
+.nav-input input{
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 6px;
+}
+
+.head-login-item{
+    position: absolute;
+    top: 33px;
+    left: 50%;
+    width: 164px;
+    margin-left: -60px;
+    background-position: -20px 0;
+    background: #3b3b3b;
+    border: 1px solid #202020;
+    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.50);
+    border-radius: 4px;
+    display: none;
+}
+.head-login:hover .head-login-item{
+    display: block;
+}
+
+.head-login-item li{
+    height: 40px;
+    border: .5px solid #232323;
+    border-width: 1px 0;
+    clear: both;
+}
+.head-login-item li:hover{
+    background: #5b5b5b;
+}
+.head-login-item li a{
+    float: left;
+    width: 100%;
+    height: 38px;
+    overflow: hidden;
+    padding-left: 24px;
+    color: #ccc;
+    line-height: 39px;
+}
+.head-login-item li a .icn{
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 10px 10px 0 -7px;
+
+}
+.head-login-item li a em{
+    float: left;
+    width: 116px;
+}
+.icn-mb{
+    background-position: 0 0;
+}
+.icn-wx{
+    background-position: -20px -20px;
+}
+.icn-qq{
+    background-position: -20px -40px;
+}
+.icn-sn{
+    background-position: -20px -60px;
+}
+.icn-wy{
+    background-position: -20px -80px;
+}
+.arr{
+position: absolute;
+    top: 27px;
+    left: 50%;
+    width: 14px;
+    height: 8px;
+    margin-left: 7px;
+    background-position: -20px 0;
+}
+.subnav{
+    z-index: 90;
+    height: 35px;
+    box-sizing: border-box;
+    background-color: #C20C0C;
+    border-bottom: 1px solid #a40011;
+}
+.subnav-item{
+    float: left;
+    padding-left: 180px;
+}
+
+.subnav-item li{
+    float: left;
+    height: 34px;
+    text-align: center;
+}
+.subnav-item li a{
+    display: inline-block;
+    height: 20px;
+    padding: 0 13px;
+    margin: 7px 17px 0;
+    border-radius: 20px;
+    line-height: 21px;
+    color: #fff;
+}
+.subnav-item li a:hover{
+    background: #9B0909;
+}
