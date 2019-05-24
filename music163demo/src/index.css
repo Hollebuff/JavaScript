@@ -50,13 +50,11 @@ textarea {
 }
 
 .clearfix:after {
-    content: ".";
-    width: 0;
+    clear: both;
+    content: ' ';
+    display: block;
     height: 0;
     visibility: hidden;
-    display: block;
-    clear: both;
-    overflow:hidden;
 }
 
 .fl {
@@ -98,4 +96,16 @@ textarea {
 }
 .download, .download-btn{
     background: url(./assets/download.png) no-repeat 0 0;
+}
+.content-title, .more-tt{
+    background: url(./assets/index.png) no-repeat 0 9999px;
+    
+}
+.icon-listen, .icon-play{
+    background: url(./assets/iconall.png) no-repeat 0 9999px;
+
+}
+.list-item-info{
+    background: url(./assets/coverall.png) no-repeat 0 9999px;
+
 }

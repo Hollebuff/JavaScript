@@ -7,9 +7,135 @@
     border: 1px solid #d3d3d3;
     border-width: 0 1px;
 }
+.content-wrap{
+    margin-right: 251px;
+}
+.main-content{
+    padding: 20px 20px 40px;
+}
+
+
+
+.content-title {
+    height: 33px;
+    padding: 0 10px 0 34px;
+    background-position: -225px -156px;
+    border-bottom: 2px solid #C10D0C;
+}
+
 .hot-title{
     float: left;
     font-size: 20px;
     font-weight: normal;
     line-height: 28px;
 }
+
+.hot-nav{
+    float: left;
+    margin: 7px 0 0 20px;
+}
+.line{
+    margin: 0 10px;
+    color: #ccc;
+}
+
+.more-tt{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    vertical-align: middle;
+    background-position: 0 -240px;
+}
+
+/* 内容列表 */
+.hot-music .hot-music-item{
+    margin: 20px 0 0 -42px;
+}
+
+.hot-music .hot-music-list {
+    width: 182px;
+    height: 204px;
+    padding-left: 42px;
+}
+
+.hot-music-item li{
+    float: left;
+    display: inline-block;
+    width: 140px;
+    height: 188px;
+    overflow: hidden;
+    padding: 0 0 30px 50px;
+    line-height: 1
+}
+
+.list-item {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+
+.list-item img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.list-item >a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.list-item-info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 27px;
+    background-position: 0 -537px;
+    color: #ccc;
+}
+
+.list-item-info > span, .list-item-info > a{
+    display: block;
+    float: left;
+}
+
+.icon-listen{
+    width: 14px;
+    height: 11px;
+    background-position: 0 -24px;
+    margin: 9px 5px 9px 10px;
+}
+
+.hot-item-nub{
+    margin: 7px 0 0 0;
+}
+
+.list-item-info .icon-play{
+    float: right;
+    width: 16px;
+    height: 17px;
+    background-position: 0 0;
+    margin: 7px 10px 0 0;
+}
+
+.hot-dsc{
+    margin: 8px 0 3px;
+    font-size: 14px;
+}
+
+.hot-dsc a{
+    display: inline-block;
+    max-width: 100%;
+    _width: 100%;
+    vertical-align: middle;
+    line-height: 1.4;
+}
+.hot-dsc a:hover{
+    text-decoration: underline;
+}
+
