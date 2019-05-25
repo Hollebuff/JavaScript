@@ -97,15 +97,24 @@ textarea {
 .download, .download-btn{
     background: url(./assets/download.png) no-repeat 0 0;
 }
-.content-title, .more-tt, .new-items > li{
+.side-login, .side-login a, .content-title, .more-tt, .new-items > li, .type-icon-play, .type-icon-good{
     background: url(./assets/index.png) no-repeat 0 9999px;
     
 }
-.icon-listen, .icon-play{
+.icon-listen, .hot-icon-play, .new-icon-play{
     background: url(./assets/iconall.png) no-repeat 0 9999px;
 
 }
 .list-item-info, .item-dt-bc{
     background: url(./assets/coverall.png) no-repeat 0 9999px;
+
+}
+
+.top-wrap{
+    background: url(./assets/index_bill.png) no-repeat;
+}
+
+.to-singer a{
+    background: url(./assets/button2.png) no-repeat;
 
 }
