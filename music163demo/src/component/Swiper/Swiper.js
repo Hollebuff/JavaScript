@@ -17,8 +17,9 @@ class Swiper extends Component {
             show: false    // 前后按钮显示
         }
     }
-        componentDidMount(){ //一开始自动播放
-        this.start();
+
+    componentDidMount(){ //一开始自动播放
+    this.start();
     }
     componentWillUnmount() { //销毁前清除定时器
         this.stop();
@@ -43,6 +44,7 @@ class Swiper extends Component {
             showIndex
         })
     }
+
     previous = (e) => {   //上一张
         // let ev = e || window.event;
         let {showIndex, imgPath} = this.state;
@@ -70,11 +72,11 @@ class Swiper extends Component {
 
     render(){
         return (
-            <div className="ReactCarousel bannar">
-                <div className="contain" 
-                    onMouseEnter={()=>{this.stop()}} //鼠标进入停止自动播放
-                    onMouseLeave={()=>{this.start()}}  //鼠标退出自动播放
-                >
+            <div className="ReactCarousel bannar"
+                onMouseEnter={()=>{this.stop()}} //鼠标进入停止自动播放
+                onMouseLeave={()=>{this.start()}}  //鼠标退出自动播放
+            >
+                <div className="contain">
                     <ul className="ul">
                         {
                             this.state.imgPath.map((value, index) => {
@@ -95,10 +97,10 @@ class Swiper extends Component {
                         {
                             this.state.imgPath.map((value, index) => {
                                 return (
-                                    <li key={index}  
-                                        className={index === this.state.showIndex ? 'active' : ''} 
-                                        onClick={()=>{this.change(index)}}>
-                                    </li>)
+                                <li key={index}  
+                                    className={index === this.state.showIndex ? 'active' : ''} 
+                                    onClick={()=>{this.change(index)}}>
+                                </li>)
                             })
                         }
                     </ul>

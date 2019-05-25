@@ -97,7 +97,7 @@ textarea {
 .download, .download-btn{
     background: url(./assets/download.png) no-repeat 0 0;
 }
-.content-title, .more-tt{
+.content-title, .more-tt, .new-items > li{
     background: url(./assets/index.png) no-repeat 0 9999px;
     
 }
@@ -105,7 +105,7 @@ textarea {
     background: url(./assets/iconall.png) no-repeat 0 9999px;
 
 }
-.list-item-info{
+.list-item-info, .item-dt-bc{
     background: url(./assets/coverall.png) no-repeat 0 9999px;
 
 }
