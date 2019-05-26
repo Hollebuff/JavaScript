@@ -212,14 +212,6 @@ class MainContent extends Component {
                                                 transitionTimingFunction: 'ease-out'
                                             }}
                                         >
-                                            {/* 
-                                        style={{
-                                            marginLeft: this.state.showLeft,
-                                            transform: '2s',
-                                            transitionDuration: '1s',
-                                            transitionTimingFunction: 'ease-out'
-                                            }}
-                                        > */}
                                             <ul className='new-items'>
                                                 <li>
                                                     <div className='item-img'>
@@ -562,7 +554,7 @@ class MainContent extends Component {
                                                 <div className='top-img'><img src={topImg1} /></div>
 
                                                 <div className='top-type-title'>
-                                                    <h3><a href=''>云音乐飙升榜</a> </h3>
+                                                    <h3><a href='https://music.163.com/'>云音乐飙升榜</a> </h3>
                                                     <div className='type-icon'>
                                                         <a className='type-icon-play' href='javascript:;'></a>
                                                         <a className='type-icon-good' href='javascript:;'></a>
@@ -576,26 +568,26 @@ class MainContent extends Component {
                                         <ul className='top-lists'>
                                             <li className='clearfix'>
                                                 <span className='top-list-nub'>1</span>
-                                                <a className='top-list-name' href=''>情深深雨蒙蒙</a>
+                                                <a className='top-list-name' href='https://music.163.com/'>情深深雨蒙蒙</a>
                                                 <span className='top-icon'>
-                                                    <a className='icon-play' href=''></a>
-                                                    <a className='icon-add' href=''></a>
-                                                    <a className='icon-good' href=''></a>
+                                                    <a className='icon-play' href='https://music.163.com/'></a>
+                                                    <a className='icon-add' href='https://music.163.com/'></a>
+                                                    <a className='icon-good' href='https://music.163.com/'></a>
                                                 </span>
                                             </li>
                                             <li className='clearfix'>
                                                 <span className='top-list-nub'>1</span>
-                                                <a className='top-list-name' href=''>Cross Me (feat. Chance the Rapper & PnB Rock)</a>
+                                                <a className='top-list-name' href='https://music.163.com/'>Cross Me (feat. Chance the Rapper & PnB Rock)</a>
                                                 <span className='top-icon'>
-                                                    <a className='icon-play' href=''></a>
-                                                    <a className='icon-add' href=''></a>
-                                                    <a className='icon-good' href=''></a>
+                                                    <a className='icon-play' href='https://music.163.com/'></a>
+                                                    <a className='icon-add' href='https://music.163.com/'></a>
+                                                    <a className='icon-good' href='https://music.163.com/'></a>
                                                 </span>
                                             </li>
 
                                         </ul>
                                         <div className='top-more'>
-                                            <a href=''>查看更多&gt;</a>
+                                            <a href='https://music.163.com/'>查看更多&gt;</a>
                                         </div>
                                     </div>
                                     <div className='top-wrap-item'>
@@ -605,7 +597,7 @@ class MainContent extends Component {
                                                 <div className='top-img'><img src={topImg1} /></div>
 
                                                 <div className='top-type-title'>
-                                                    <h3><a href=''>云音乐飙升榜</a> </h3>
+                                                    <h3><a href='https://music.163.com/'>云音乐飙升榜</a> </h3>
                                                     <div className='type-icon'>
                                                         <a className='type-icon-play' href='javascript:;'></a>
                                                         <a className='type-icon-good' href='javascript:;'></a>
@@ -619,26 +611,26 @@ class MainContent extends Component {
                                         <ul className='top-lists'>
                                             <li className='clearfix'>
                                                 <span className='top-list-nub'>1</span>
-                                                <a className='top-list-name' href=''>情深深雨蒙蒙</a>
+                                                <a className='top-list-name' href='https://music.163.com/'>情深深雨蒙蒙</a>
                                                 <span className='top-icon'>
-                                                    <a className='icon-play' href=''></a>
-                                                    <a className='icon-add' href=''></a>
-                                                    <a className='icon-good' href=''></a>
+                                                    <a className='icon-play' href='https://music.163.com/'></a>
+                                                    <a className='icon-add' href='https://music.163.com/'></a>
+                                                    <a className='icon-good' href='https://music.163.com/'></a>
                                                 </span>
                                             </li>
                                             <li className='clearfix'>
                                                 <span className='top-list-nub'>1</span>
-                                                <a className='top-list-name' href=''>Cross Me (feat. Chance the Rapper & PnB Rock)</a>
+                                                <a className='top-list-name' href='https://music.163.com/'>Cross Me (feat. Chance the Rapper & PnB Rock)</a>
                                                 <span className='top-icon'>
-                                                    <a className='icon-play' href=''></a>
-                                                    <a className='icon-add' href=''></a>
-                                                    <a className='icon-good' href=''></a>
+                                                    <a className='icon-play' href='https://music.163.com/'></a>
+                                                    <a className='icon-add' href='https://music.163.com/'></a>
+                                                    <a className='icon-good' href='https://music.163.com/'></a>
                                                 </span>
                                             </li>
 
                                         </ul>
                                         <div className='top-more'>
-                                            <a href=''>查看更多&gt;</a>
+                                            <a href='https://music.163.com/'>查看更多&gt;</a>
                                         </div>
                                     </div>
                                     <div className='top-wrap-item top-last-w'>
@@ -648,7 +640,7 @@ class MainContent extends Component {
                                                 <div className='top-img'><img src={topImg1} /></div>
 
                                                 <div className='top-type-title'>
-                                                    <h3><a href=''>云音乐飙升榜</a> </h3>
+                                                    <h3><a href='https://music.163.com/'>云音乐飙升榜</a> </h3>
                                                     <div className='type-icon'>
                                                         <a className='type-icon-play' href='javascript:;'></a>
                                                         <a className='type-icon-good' href='javascript:;'></a>
@@ -662,26 +654,26 @@ class MainContent extends Component {
                                         <ul className='top-lists'>
                                             <li className='clearfix'>
                                                 <span className='top-list-nub'>1</span>
-                                                <a className='top-list-name' href=''>情深深雨蒙蒙</a>
+                                                <a className='top-list-name' href='https://music.163.com/'>情深深雨蒙蒙</a>
                                                 <span className='top-icon'>
-                                                    <a className='icon-play' href=''></a>
-                                                    <a className='icon-add' href=''></a>
-                                                    <a className='icon-good' href=''></a>
+                                                    <a className='icon-play' href='https://music.163.com/'></a>
+                                                    <a className='icon-add' href='https://music.163.com/'></a>
+                                                    <a className='icon-good' href='https://music.163.com/'></a>
                                                 </span>
                                             </li>
                                             <li className='clearfix'>
                                                 <span className='top-list-nub'>1</span>
-                                                <a className='top-list-name' href=''>Cross Me (feat. Chance the Rapper & PnB Rock)</a>
+                                                <a className='top-list-name' href='https://music.163.com/'>Cross Me (feat. Chance the Rapper & PnB Rock)</a>
                                                 <span className='top-icon'>
-                                                    <a className='icon-play' href=''></a>
-                                                    <a className='icon-add' href=''></a>
-                                                    <a className='icon-good' href=''></a>
+                                                    <a className='icon-play' href='https://music.163.com/'></a>
+                                                    <a className='icon-add' href='https://music.163.com/'></a>
+                                                    <a className='icon-good' href='https://music.163.com/'></a>
                                                 </span>
                                             </li>
 
                                         </ul>
                                         <div className='top-more'>
-                                            <a href=''>查看更多&gt;</a>
+                                            <a href='https://music.163.com/'>查看更多&gt;</a>
                                         </div>
                                     </div>
 

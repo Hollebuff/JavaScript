@@ -10,17 +10,17 @@ class Side extends Component {
             <div className='side'>
                 <div className='side-login'>
                     <p>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
-                    <a href=''>用户登录</a>
+                    <a href='https://music.163.com/'>用户登录</a>
                 </div>
                 <div className='side-info'>
                     <div className='side-subtitle clearfix'>
-                        <span>入住歌手</span>
-                        <a href=''>查看全部&gt;</a>
+                        <span>入驻歌手</span>
+                        <a href='https://music.163.com/'>查看全部&gt;</a>
                     </div>
                     <div className='side-singer clearfix'>
                     <ul className='clearfix'>
                         <li className='singer-list clearfix'>
-                            <a className='singer-item' href=''>
+                            <a className='singer-item' href='https://music.163.com/'>
                                 <div><img src={singerImg}/></div>
                                 <div className='singer-name'>
                                     <h4>张惠妹aMEI</h4>
@@ -29,7 +29,7 @@ class Side extends Component {
                             </a>
                         </li>
                         <li className='singer-list clearfix'>
-                            <a className='singer-item' href=''>
+                            <a className='singer-item' href='https://music.163.com/'>
                                 <div><img src={singerImg}/></div>
                                 <div className='singer-name'>
                                     <h4>张惠妹aMEI</h4>
@@ -38,7 +38,7 @@ class Side extends Component {
                             </a>
                         </li>
                         <li className='singer-list clearfix'>
-                            <a className='singer-item' href=''>
+                            <a className='singer-item' href='https://music.163.com/'>
                                 <div><img src={singerImg}/></div>
                                 <div className='singer-name'>
                                     <h4>张惠妹aMEI</h4>
@@ -47,7 +47,7 @@ class Side extends Component {
                             </a>
                         </li>
                         <li className='singer-list clearfix'>
-                            <a className='singer-item' href=''>
+                            <a className='singer-item' href='https://music.163.com/'>
                                 <div><img src={singerImg}/></div>
                                 <div className='singer-name'>
                                     <h4>张惠妹aMEI</h4>
@@ -56,7 +56,7 @@ class Side extends Component {
                             </a>
                         </li>
                         <li className='singer-list clearfix'>
-                            <a className='singer-item' href=''>
+                            <a className='singer-item' href='https://music.163.com/'>
                                 <div><img src={singerImg}/></div>
                                 <div className='singer-name'>
                                     <h4>张惠妹aMEI</h4>
@@ -67,11 +67,27 @@ class Side extends Component {
                     </ul>
 
                     <div className='to-singer'>
-                        <a href=''>申请成为网易音乐人</a>
+                        <a href='https://music.163.com/'>申请成为网易音乐人</a>
                     </div>
                     </div>
                     
-                    <div className='anchor'></div>
+                    <div className='anchor'>
+                        <span>入驻歌手</span>
+                    </div>
+
+                    <div className='anchor-wrap'>
+                        <ul>
+                            <li className='anchor-lists'>
+                                <div className='anchor-head'><a href='https://music.163.com/'></a> </div>
+                                <div className='anchor-name'>
+                                    <p><a href='https://music.163.com/'>陈立</a></p>
+                                    <p>心理学家、美食家陈立教授</p>
+                                </div>
+                                
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         );
