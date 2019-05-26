@@ -1,0 +1,82 @@
+.footer{
+    padding-top: 40px;
+    position: relative;
+    height: 148px;
+    overflow: hidden;
+    border-top: 1px solid rgb(211, 211, 211);
+    background: rgb(242, 242, 242);
+}
+.footer-wrap{
+    width: 980px;
+    margin: 0 auto;
+}
+
+.copy{
+    float: left;
+}
+.copy p{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.copy-items a, .copy-items span{
+    color: #999;
+}
+.copy-items span{
+    padding: 0 10px;
+}
+
+.footer-img{
+    float: right;
+}
+.footer-img .footer-1{
+    background-position: -63px -101px;
+}
+.footer-img .footer-2{
+    background-position: 0 0;
+}
+.footer-img .footer-3{
+    background-position: -60px -50px;
+}
+.footer-img .footer-4{
+    background-position: 0px -101px;
+}
+.footer-img > a{
+    float: left;
+    width: 60px;
+    height: 70px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.footer-img > a > p:first-of-type{
+    display: block;
+    float: none;
+    width: 50px;
+    height: 45px;
+    margin: 0px auto;
+    background: url(../../assets/foot_enter_new.png) 0% 0% / 110px 450px no-repeat;
+}
+.footer-img > a p:last-of-type{
+    font-size: 12px;
+    bottom: 0;
+    color: #999;
+}
+
+.totop{
+    position: fixed;
+    right: 10%;
+    bottom: 160px;
+}
+.totop a{
+    display: inline-block;
+    text-indent: -9999px;
+    z-index: 9999;
+    margin-right: 50px;
+    width: 50px;
+    height: 45px;
+    background-position: -265px -47px;
+    background: url(../../assets/sprite.png) no-repeat -265px -47px;
+}
+.totop a:hover{    
+    background-position: -325px -47px;
+}

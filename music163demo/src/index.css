@@ -101,7 +101,7 @@ textarea {
     background: url(./assets/index.png) no-repeat 0 9999px;
     
 }
-.icon-listen, .hot-icon-play, .new-icon-play{
+.icon-listen, .btn, .hot-icon-play, .new-icon-play, .cur, .vol-alpha{
     background: url(./assets/iconall.png) no-repeat 0 9999px;
 
 }
@@ -116,5 +116,35 @@ textarea {
 
 .to-singer a{
     background: url(./assets/button2.png) no-repeat;
-
 }
+
+.icon-vip{
+    background: url(./assets/icon.png) no-repeat 0 9999px;
+}
+
+.prg-long, .rdy{
+    background: url(./assets/statbar.png)
+}
+
+.broadcast-bc, .icn2, .ico-ply, .selete-src, .show-bc, .show--lock-bc, .ct-pre, .ct-ply, .ct-next{
+    background: url(./assets/playbar.png);
+}
+
+.t-hide{
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: normal;
+}
+em, i{
+    font-style: normal;
+    text-align: left;
+    font-size: inherit;
+}
+.ico3{
+    background: url(./assets/playlist.png) no-repeat 0 9999px;
+}
+
+
+
+

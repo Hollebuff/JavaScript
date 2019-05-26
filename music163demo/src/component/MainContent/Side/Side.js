@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../../../index.css';
 import './side.css'
 import singerImg from '../../../assets/side.jpg'
+import anchorImg from '../../../assets/anchor.jpg'
+
 
 
 class Side extends Component {
@@ -13,77 +15,99 @@ class Side extends Component {
                     <a href='https://music.163.com/'>用户登录</a>
                 </div>
                 <div className='side-info'>
-                    <div className='side-subtitle clearfix'>
-                        <span>入驻歌手</span>
+                    <div className='side-subtitle   '>
+                        <h3>入驻歌手</h3>
                         <a href='https://music.163.com/'>查看全部&gt;</a>
                     </div>
                     <div className='side-singer clearfix'>
-                    <ul className='clearfix'>
-                        <li className='singer-list clearfix'>
-                            <a className='singer-item' href='https://music.163.com/'>
-                                <div><img src={singerImg}/></div>
-                                <div className='singer-name'>
-                                    <h4>张惠妹aMEI</h4>
-                                    <p>台湾歌手张惠妹</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li className='singer-list clearfix'>
-                            <a className='singer-item' href='https://music.163.com/'>
-                                <div><img src={singerImg}/></div>
-                                <div className='singer-name'>
-                                    <h4>张惠妹aMEI</h4>
-                                    <p>台湾歌手张惠妹</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li className='singer-list clearfix'>
-                            <a className='singer-item' href='https://music.163.com/'>
-                                <div><img src={singerImg}/></div>
-                                <div className='singer-name'>
-                                    <h4>张惠妹aMEI</h4>
-                                    <p>台湾歌手张惠妹</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li className='singer-list clearfix'>
-                            <a className='singer-item' href='https://music.163.com/'>
-                                <div><img src={singerImg}/></div>
-                                <div className='singer-name'>
-                                    <h4>张惠妹aMEI</h4>
-                                    <p>台湾歌手张惠妹</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li className='singer-list clearfix'>
-                            <a className='singer-item' href='https://music.163.com/'>
-                                <div><img src={singerImg}/></div>
-                                <div className='singer-name'>
-                                    <h4>张惠妹aMEI</h4>
-                                    <p>台湾歌手张惠妹</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                        <ul className='clearfix'>
+                            <li className='singer-list clearfix'>
+                                <a className='singer-item' href='https://music.163.com/'>
+                                    <div><img src={singerImg}/></div>
+                                    <div className='singer-name'>
+                                        <h4>张惠妹aMEI</h4>
+                                        <p>台湾歌手张惠妹</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li className='singer-list clearfix'>
+                                <a className='singer-item' href='https://music.163.com/'>
+                                    <div><img src={singerImg}/></div>
+                                    <div className='singer-name'>
+                                        <h4>张惠妹aMEI</h4>
+                                        <p>台湾歌手张惠妹</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li className='singer-list clearfix'>
+                                <a className='singer-item' href='https://music.163.com/'>
+                                    <div><img src={singerImg}/></div>
+                                    <div className='singer-name'>
+                                        <h4>张惠妹aMEI</h4>
+                                        <p>台湾歌手张惠妹</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li className='singer-list clearfix'>
+                                <a className='singer-item' href='https://music.163.com/'>
+                                    <div><img src={singerImg}/></div>
+                                    <div className='singer-name'>
+                                        <h4>张惠妹aMEI</h4>
+                                        <p>台湾歌手张惠妹</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li className='singer-list clearfix'>
+                                <a className='singer-item' href='https://music.163.com/'>
+                                    <div><img src={singerImg}/></div>
+                                    <div className='singer-name'>
+                                        <h4>张惠妹aMEI</h4>
+                                        <p>台湾歌手张惠妹</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
 
-                    <div className='to-singer'>
-                        <a href='https://music.163.com/'>申请成为网易音乐人</a>
-                    </div>
+                        <div className='to-singer'>
+                            <a href='https://music.163.com/'>申请成为网易音乐人</a>
+                        </div>
                     </div>
                     
-                    <div className='anchor'>
-                        <span>入驻歌手</span>
+
+                    {/* 热门主播 */}
+                    <div className='anchor side-subtitle'>
+                        <h3>热门主播</h3>
                     </div>
 
                     <div className='anchor-wrap'>
                         <ul>
                             <li className='anchor-lists'>
-                                <div className='anchor-head'><a href='https://music.163.com/'></a> </div>
+                                <div className='anchor-head'><a href='https://music.163.com/'><img src={anchorImg} /> </a> </div>
                                 <div className='anchor-name'>
-                                    <p><a href='https://music.163.com/'>陈立</a></p>
+                                    <p><a href='https://music.163.com/'>陈立</a> <i className='icon-vip'></i></p>
                                     <p>心理学家、美食家陈立教授</p>
                                 </div>
-                                
+                            </li>
+                            <li className='anchor-lists'>
+                                <div className='anchor-head'><a href='https://music.163.com/'><img src={anchorImg} /> </a> </div>
+                                <div className='anchor-name'>
+                                    <p><a href='https://music.163.com/'>陈立</a> <i className='icon-vip'></i></p>
+                                    <p>心理学家、美食家陈立教授</p>
+                                </div>
+                            </li>
+                            <li className='anchor-lists'>
+                                <div className='anchor-head'><a href='https://music.163.com/'><img src={anchorImg} /> </a> </div>
+                                <div className='anchor-name'>
+                                    <p><a href='https://music.163.com/'>陈立</a> <i className='icon-vip'></i></p>
+                                    <p>心理学家、美食家陈立教授</p>
+                                </div>
+                            </li>
+                            <li className='anchor-lists'>
+                                <div className='anchor-head'><a href='https://music.163.com/'><img src={anchorImg} /> </a> </div>
+                                <div className='anchor-name'>
+                                    <p><a href='https://music.163.com/'>陈立</a> <i className='icon-vip'></i></p>
+                                    <p>心理学家、美食家陈立教授</p>
+                                </div>
                             </li>
                         </ul>
                     </div>

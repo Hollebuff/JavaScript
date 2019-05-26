@@ -59,7 +59,7 @@ class MainContent extends Component {
 
     render() {
         return (
-            <div className='main'>
+            <div className='main clearfix'>
                     <div className='content-wrap'>
                         {/* 主要内容 */}
                         <div className='main-content'>

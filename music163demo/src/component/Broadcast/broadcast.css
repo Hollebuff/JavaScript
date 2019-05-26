@@ -1,0 +1,402 @@
+.broadcast{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+
+/* 控制单位 */
+
+.broadcast-control{
+    position: relative;
+    height: 53px;
+}
+
+.broadcast-bc{
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    height: 53px;
+    zoom: 1;
+    /* margin-right: 67px; */
+}
+.show-bc{
+    position: absolute;
+    top: -14px;
+    right: 15px;
+    width: 52px;
+    height: 67px;
+    background-position: 0 -380px;
+}
+
+.show--lock-bc{
+    background-position: -100px -380px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 6px 0 0 17px;
+}
+.show--lock-bc:hover{
+    background-position: -100px -400px;
+
+}
+
+
+
+
+/* 播放条内容 */
+.broadcast-wrap{
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 12px;
+    z-index: 9999;
+}
+
+
+.broadcast-wrap > div{
+    float: left;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.player-control {
+    width: 137px;
+}
+/* 上下一曲播放 */
+.player-control > a{
+    display: block;
+    float: left;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    margin-top: 5px;
+    text-indent: -9999px;
+}
+.player-control .ct-pre{
+    background-position: 0 -130px;
+}
+.player-control .ct-ply{
+    width: 36px;
+    height: 36px;
+    margin-top: 0;
+    background-position: 0 -204px;
+}
+.player-control .ct-next{
+    background-position: -80px -130px;
+}
+.player-control .ct-pre:hover{
+    background-position: -30px -130px;;
+}
+.player-control .ct-ply:hover{
+    background-position: -40px -204px;
+}
+.player-control .ct-next:hover{
+    background-position: -110px -130px;
+}
+
+
+.player-head a img{
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+/* 进度条 */
+.player-info{
+    margin-left: 16px;
+    font-size: 12px;
+    width: 608px;
+
+}
+.player-info-name{
+    margin-top: -4px;
+    height: 22px;
+    line-height: 18px;
+    overflow: hidden;
+}
+
+.player-info a:hover{
+    text-decoration: underline;
+}
+.singe-name{
+    color: #e8e8e8;
+
+}
+.player-info-name span a{
+    color: #999;
+    padding-left: 10px;
+}
+
+.player-info-prg{
+    position: relative;
+}
+
+.prg-long{
+    display: inline-block;
+    height: 9px;
+    background-position: right 0;
+    width: 493px;
+}
+
+
+.rdy{
+    background-position: right -30px;
+}
+.cur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1%;
+    background-position: left -66px;
+}
+
+
+.selete-ply{
+    position: absolute;
+    top: -3px;
+    right: -13px;
+    width: 22px;
+    height: 24px;
+    margin-left: -11px;
+    background-position: 0 -250px;
+    _background-position: 0 0;
+}
+
+.player-src{
+    display: inline-block;
+    width: 14px;
+    height: 15px;
+    margin-left: 13px;
+    background-position: -110px -103px;
+    background: url(../../assets/playbar.png) no-repeat 0 9999px;;
+
+}
+
+
+.prg-time{
+    padding-left: 8px;
+    font-size: 12px;
+}
+
+.player-info-prg .prg-time{
+    color: #888;
+}
+
+.prg-time em{
+    color: #a1a1a1
+}
+
+
+
+.icn-list{
+    width: 60px;
+    background-position: -88px -163px;
+}
+.icn-share{
+    background-position: -114px -163px;
+}
+
+.icn-list:hover{
+    background-position: -88px -189px;
+}
+.icn-share:hover{
+    background-position: -114px -189px;
+}
+
+/* 音量 */
+.icn-player-list{
+    position: relative;
+}
+
+.m-vol{
+    position: absolute;
+    top: -120px;
+    left: -4px;
+    clear: both;
+    width: 32px;
+    height: 113px;
+    visibility: hidden;
+}
+
+.m-vol-bc{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 113px;
+    background-position: 0 -503px;
+}
+.vol-cur{
+    position: absolute;
+    top: auto;
+    bottom: 10px;
+    width: 4px;
+    left: 15px;
+    background-position: -40px bottom;
+    overflow: hidden;
+}
+.vol-alpha{
+    position: absolute;
+    top: 0;
+    left: 8px;
+    display: block;
+    width: 18px;
+    height: 20px;
+    background-position: -40px -250px;
+    cursor: pointer;
+}
+
+
+
+
+
+.icn2{
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 4px 2px 0 0;
+    text-indent: -9999px;
+}
+.icn-vol{
+    background-position: -2px -248px;
+}
+.icn-one{
+    background-position: -66px -344px;
+}
+.icn-vol:hover{
+    background-position: -31px -248px;
+}
+.icn-one:hover{
+    background-position: -93px -344px;
+}
+.icn-singe-item{
+    width: 59px;
+    height: 36px;
+    position: relative;
+    zoom: 1;
+    overflow: hidden;
+    float: left;
+    margin-left: 6px;
+    text-indent: -9999px;
+}
+
+
+.icn-more{
+    display: block;
+    float: none;
+    width: 56px;
+    background-position: -45px -69px;
+    color: #666;
+    text-decoration: none;
+}
+
+
+/* 添加音乐列表 */
+.listed{
+    position: absolute;
+    left: 50%;
+    bottom: 47px;
+    width: 986px;
+    height: 301px;
+    margin-left: -493px;
+    background: #1f1f1f;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+
+
+}
+
+.listed-head{
+    height: 41px;
+    
+    border-bottom: 1px solid #333;
+    box-shadow: 1px 3px 1px #666;
+}
+.head-pl{
+    float: left;
+    width: 560px;
+    height: 41px;
+
+}
+.head-pl h4{
+    float: left;
+    margin-left: 30px;
+    color: #fff;
+    line-height: 40px;
+}
+
+.head-do{
+    float: right;
+    font-size: 12px;
+    padding-right: 20px;
+}
+.head-add-all, .head-delete-all{
+    color: #ccc;
+    line-height: 40px;
+
+}
+.ico3{
+    display: inline-block;
+    margin: 0 6px 0 0;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+
+}
+.icon-add-all{
+    background-position: -24px 0;
+}
+.icon-delete-all{
+    background-position: -51px 0;
+}
+.icon-add-all:hover{
+    background-position: -24px -20px;
+    
+}
+
+.icon-delete-all:hover{
+    background-position: -51px -20px;
+}
+
+.head-do a:hover{
+    color: #e2e2e2;
+    text-decoration: underline;
+}
+
+.head-do span{
+    padding: 0 8px;
+}
+
+
+
+.head-details{
+    float: right;
+    width: 426px;
+    height: 41px;
+    border-left: 1px solid #666;
+    padding-left: 30px
+
+}
+.head-details h4{
+    display: block;
+    float: left;
+    padding-right: 20px;
+    color: #fff;
+    line-height: 40px;
+
+
+}
+.head-details a{
+    display: block;
+    float: left;
+    color: #999;
+    line-height: 40px;
+    padding-right: 6px;
+    font-size: 20px;
+
+}
+
+
+
+
+
+
