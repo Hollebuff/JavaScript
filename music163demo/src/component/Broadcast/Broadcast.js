@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import '../../index.css';
-import './broadcast.css'
-import playHead from '../../assets/playerhead.jpg'
+import './broadcast.css';
+import playHead from '../../assets/playerhead.jpg';
+import PropTypes from 'prop-types';
+
 
 class Broadcast extends Component {
+    static propTypes = {
+        handleDeleteSinge: PropTypes.func
+    }
     constructor(props){
         super(props)
         this.state = {
@@ -57,6 +62,16 @@ class Broadcast extends Component {
             showListSinge : false
         })
     }
+    handleDeleteList = (e) =>{
+        this.props.handleDeleteList(e)
+    }
+    // 删除单条数据
+    handleDeleteSinge = (index) => {
+        if(this.props.handleDeleteSinge)
+        this.props.handleDeleteSinge(index)
+
+    }
+
 
     render() {
         const { barStatus, showStyle, hideStyle, barLockStatus, showListSinge } = this.state;
@@ -133,6 +148,9 @@ class Broadcast extends Component {
                                     <a className='icn2 ico-ply icn-more' href="javascript:;"
                                      onClick = {this.handlegingeList}
                                     >
+                                    {/* 歌曲数量 */}
+                                    {/* 1 */}
+                                    {this.props.singeListItem.length}
                                     </a>
                                 </span>
                             </div>
@@ -157,11 +175,13 @@ class Broadcast extends Component {
                     <div className='listed-head'>
                         {/* 播放列表 */}
                         <div className='head-pl'>
-                            <h4>播放列表{0}</h4>
+                            <h4>播放列表&nbsp;({this.props.singeListItem.length})</h4>
                             <div className='head-do'>
                                 <a className='head-add-all' href='javascript'><i className='ico3 icon-add-all'></i>收藏全部</a>
                                 <span>|</span>
-                                <a className='head-delete-all' href='javascript'><i className='ico3 icon-delete-all'></i>清除</a>
+                                <a className='head-delete-all' href='javascript:;'
+                                onClick = { this.handleDeleteList}
+                                ><i className='ico3 icon-delete-all'></i>清除</a>
                             </div>
                         </div>
 
@@ -179,17 +199,18 @@ class Broadcast extends Component {
                         <div className='listed-content-main'>
                             <ul>
                             {
-
                                 this.props.singeListItem.map((item, i) => {
                                     return(
-                                        <li className='listed-item clearfix' key = { i }>
+                                        <li className='listed-item clearfix' key = { i } index={i}>
                                             <div className='list-playing'><i className='icon-playing'></i></div>
                                             <div className='list-singe'>{item.singeName}</div>
                                             <div className='list-control'>
                                                 <i className='ico3 icon-add-all'></i>
                                                 <i className='ico3 icn2-inline'></i>
                                                 <i className='icn2 icn2-inline icon-down'></i>
-                                                <i className='ico3 icon-delete-all'></i>
+                                                <i className='ico3 icon-delete-all'
+                                                onClick = {this.handleDeleteSinge.bind(i)}      // 删除播发列表的歌曲
+                                                ></i>
                                             </div>
                                             <div className='list-info'>
                                                 <span>{item.singer}</span>

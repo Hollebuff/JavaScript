@@ -44,7 +44,8 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log('APP', Object.prototype.toString.call(this.state.singeListItem))
+        // console.log('APP', Object.prototype.toString.call(this.state.singeListItem))
+        // console.log(this.state.singeListItem.length)
         window.addEventListener('scroll', this.handleShowTop.bind(this));
     }
     componentWillUnmount() {
@@ -98,7 +99,20 @@ class App extends Component {
             addStatus: true
         })
     }
-
+    //  清空歌曲
+    handleDeleteList(){
+        this.setState({
+            singeListItem: []
+        })
+    }
+    // 单条删除
+    handleDeleteSinge(index){
+        const singeListItem = this.state.singeListItem
+        singeListItem.splice(index, 1)
+        this.setState({
+            singeListItem
+        })
+    }
 
     render() {
         return (
@@ -118,6 +132,8 @@ class App extends Component {
                  singeListItem = {this.state.singeListItem}      // 传递组件，渲染正在播放的列表
                  singeIng = { this.state.singeIng }          // 播发条播放的歌曲
                  addStatus = { this.state.addStatus}
+                 handleDeleteList = { this.handleDeleteList.bind(this)}
+                 handleDeleteSinge = { this.handleDeleteSinge.bind(this)}
                 />
             </div>
         )

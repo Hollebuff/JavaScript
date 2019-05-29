@@ -280,16 +280,23 @@
     float: left;
     margin-left: 6px;
     text-indent: -9999px;
+    z-index: 9999;
 }
 
 
-.icn-more{
+.icn-singe-item .icn-more{
     display: block;
     float: none;
     width: 56px;
     background-position: -45px -69px;
     color: #666;
     text-decoration: none;
+    z-index: 9999;
+    text-indent: 0px;
+    padding-left: 10px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 24px;
 }
 
 
@@ -403,7 +410,17 @@
 .listed-content-main ul{
     border-right: 2px solid #333;
     box-shadow: 3px 0px 2px rgb(32, 32, 32);
+    height: 260px;
+    overflow-y: auto;
 }
+.listed-content-main ul::-webkit-scrollbar
+{
+  width: 5px;
+  background-color: rgba(219, 219, 219, 0);
+}
+
+
+
 .listed-item{
     padding: 0 10px;
 }
@@ -453,7 +470,7 @@
     padding-left: 10px;
     height: 28px;
     line-height: 28px;
-    width: 260px;
+    width: 256px;
 }
 
 

@@ -267,9 +267,15 @@ class MainContent extends Component {
                                                         <span className='top-list-nub'>{index + 1}</span>
                                                         <a className='top-list-name' href='https://music.163.com/'>{item.newName}</a>
                                                         <span className='top-icon'>
-                                                            <a className='icon-play' href='javascript:;'> </a>
-                                                            <a className='icon-add' href='javascript:;'> </a>
-                                                            <a className='icon-good' href='javascript:;'> </a>
+                                                            <a className='icon-play' href='javascript:;'
+                                                            onClick = {this.handlePlay.bind(this, item.newName)}  // 播发
+                                                            > </a>
+                                                            <a className='icon-add' href='javascript:;' 
+                                                            onClick = {this.handleAdd.bind(this, item.newName)}   // 添加
+                                                            > </a>
+                                                            <a className='icon-good' href='javascript:;'
+                                                            onClick = {this.handleGood.bind(this, item.newName)}  // 收藏
+                                                            > </a>
                                                         </span>
                                                     </li>
                                                 )
@@ -280,8 +286,6 @@ class MainContent extends Component {
                                         <a href='https://music.163.com/'>查看更多&gt;</a>
                                     </div>
                                 </div>
-
-
                                 <div className='top-wrap-item top-last-w'>
                                     <div className='top-item'>
                                         <div className='top-title'>
@@ -291,10 +295,8 @@ class MainContent extends Component {
                                                 <div className='type-icon'>
                                                     <a className='type-icon-play' href='javascript:;'> </a>
                                                     <a className='type-icon-good' href='javascript:;'> </a>
-
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
 
@@ -306,15 +308,20 @@ class MainContent extends Component {
                                                         <span className='top-list-nub'>{index + 1}</span>
                                                         <a className='top-list-name' href='https://music.163.com/'>{item.originalName}</a>
                                                         <span className='top-icon'>
-                                                            <a className='icon-play' href='javascript:;'> </a>
-                                                            <a className='icon-add' href='javascript:;'> </a>
-                                                            <a className='icon-good' href='javascript:;'> </a>
+                                                            <a className='icon-play' href='javascript:;'
+                                                            onClick = {this.handlePlay.bind(this, item.originalName)}  // 播发
+                                                            > </a>
+                                                            <a className='icon-add' href='javascript:;' 
+                                                            onClick = {this.handleAdd.bind(this, item.originalName)}   // 添加
+                                                            > </a>
+                                                            <a className='icon-good' href='javascript:;'
+                                                            onClick = {this.handleGood.bind(this, item.originalName)}  // 收藏
+                                                            > </a>
                                                         </span>
                                                     </li>
                                                 )
                                             })
                                         }
-
                                     </ul>
                                     <div className='top-more'>
                                         <a href='https://music.163.com/'>查看更多&gt;</a>
