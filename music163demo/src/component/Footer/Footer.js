@@ -3,9 +3,10 @@ import '../../index.css';
 import './footer.css'
 
 class Footer extends Component {
+
     render() {
         return (
-            <div className='footer'>
+            <div className='footer' >
                 <div className='footer-wrap'>
                     <div className='copy'>
                         <p className='copy-items'>
@@ -33,7 +34,9 @@ class Footer extends Component {
                     </div>
                 </div>
 
-                <div className='totop'>
+                <div className='totop'
+                style = { this.props.showTopStatus ? {display:'block'}: {}}
+                >
                     <a id="g_backtop" href="#">回到顶部</a>
                 </div>
                 

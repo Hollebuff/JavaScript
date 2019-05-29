@@ -1,9 +1,8 @@
 .side{
     position: relative;
     float: right;
-    width: 248px;
+    width: 250px;
     zoom: 1;
-    border: 1px solid #d3d3d3;
 }   
 
 /* 登录 */

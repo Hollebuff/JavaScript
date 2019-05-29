@@ -87,7 +87,7 @@ textarea {
     *display: inline;
     *zoom: 1;
 }
-.headnav .logo, .head-login{
+.headnav .logo, .head-login, .nav-hot{
     background: url(./assets/topbar.png) no-repeat 0 9999px;
 }
 .icn, .arr{
@@ -141,7 +141,7 @@ em, i{
     text-align: left;
     font-size: inherit;
 }
-.ico3{
+.ico3, .icon-down, .icon-playing, .list-info-srcou, .icn2-inline{
     background: url(./assets/playlist.png) no-repeat 0 9999px;
 }
 

@@ -65,9 +65,8 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-
-    "rules":{
-      "jsx-a11y/anchor-is-valid":"off" 
+    "rules": {
+      "jsx-a11y/anchor-is-valid": "off"
     }
   },
   "browserslist": {
@@ -133,5 +132,10 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
   }
 }

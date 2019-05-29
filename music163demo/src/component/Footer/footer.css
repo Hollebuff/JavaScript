@@ -64,8 +64,9 @@
 
 .totop{
     position: fixed;
-    right: 10%;
+    right: 15%;
     bottom: 160px;
+    display: none;
 }
 .totop a{
     display: inline-block;

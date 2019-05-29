@@ -21,7 +21,11 @@
     height: 69px;
     background-position: 0 0;    
 }
-
+.logo a{
+    display: inline-block;
+    width: 176px;
+    height: 69px;
+}
 
 .headnav .logo-title a{
     float: left;
@@ -47,6 +51,15 @@
     text-decoration: none;
     color: #fff;    
 }
+.nav-hot{
+    display: block;
+    position: absolute;
+    top: 21px;
+    left: 100px;
+    width: 28px;
+    height: 19px;
+    background-position: -190px 0;
+}
 
 .z-slt{
     background: #000;
@@ -60,9 +73,15 @@
     line-height: 70px;
     color: #ccc;
 }
+.nav-input{
+    margin-left: 70px;
+}
 .nav-input, .head-other{
     height: 70px;
     line-height: 70px;
+}
+.head-other{
+    margin-left: 6px;
 }
 .other{
     float: left;
@@ -112,6 +131,7 @@
     box-shadow: 0 8px 24px 0 rgba(0,0,0,0.50);
     border-radius: 4px;
     display: none;
+    z-index: 99999;
 }
 .head-login:hover .head-login-item{
     display: block;

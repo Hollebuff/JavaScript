@@ -1,0 +1,16 @@
+{
+    "mainData":[
+        {
+            "Id": 1001,
+            "imgs": "../../assets/hot1.jpg",
+            "musicId": 100,
+            "music": "有过的心动，为何不像电影里从一而终"
+        },
+        {
+            "Id": 1002,
+            "imgs": "../../assets/hot1.jpg",
+            "musicId": 200,
+            "music": "为何不像电影里从一而终"
+        }
+    ]
+}

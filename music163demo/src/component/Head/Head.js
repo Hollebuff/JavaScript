@@ -10,6 +10,10 @@ class Head extends Component {
         }
     }
 
+    componentDidMount(){
+        
+    }
+
     handleEnter = () =>{
         this.setState({
             loginshow: true
@@ -36,7 +40,7 @@ class Head extends Component {
                             <li><a href="https://music.163.com/">朋友</a></li>
                             <li><a href="https://music.163.com/">商城</a></li>
                             <li><a href="https://music.163.com/">音乐人</a></li>
-                            <li><a href="https://music.163.com/">下载客户端</a></li>
+                            <li><a href="https://music.163.com/">下载客户端 <i className='nav-hot'></i></a></li>
                         </ul>
 
                         <div className='nav-input'>

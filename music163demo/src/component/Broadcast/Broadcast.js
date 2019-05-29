@@ -4,10 +4,72 @@ import './broadcast.css'
 import playHead from '../../assets/playerhead.jpg'
 
 class Broadcast extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            barStatus: this.props.addStatus || false,   // 底部播发条默认隐藏
+            barLockStatus: false,   // 底部播发条默认不锁定        
+            showListSinge: false  // 音乐列表默认隐藏
+        }
+    }
+
+    handleMouseEnter = () =>{
+        const { barLockStatus } = this.state
+        if(!barLockStatus){    // 没有锁定
+            this.setState({
+                barStatus: true
+            })
+        }
+        else{
+            return null
+        }
+    }
+
+    handleMouseLeave = () =>{
+        const { barLockStatus } = this.state
+        if(!barLockStatus){    // 没有锁定
+            this.setState({
+                barStatus: false
+            })
+        }
+        // else{
+        //     if(!this.state.barStatus){
+        //         this.setState({
+        //             barStatus: true
+        //         })
+        //     }
+        // }
+    }
+    //  锁定
+    handleOnclickShow = () =>{
+        this.setState({
+            barLockStatus: !this.state.barLockStatus
+        })
+    }
+    // 播放列表控制
+    handlegingeList = () =>{
+        this.setState({
+            showListSinge : !this.state.showListSinge
+        })
+    }
+    handleHideSinge = () => {
+        this.setState({
+            showListSinge : false
+        })
+    }
+
     render() {
+        const { barStatus, showStyle, hideStyle, barLockStatus, showListSinge } = this.state;
         return (
             // 控制位置
-            <div className='broadcast'>
+            <div className='broadcast'
+             style = { barStatus ? 
+             {bottom:'0px',transform: '1s'} : 
+             {bottom:'-44px',transform: '1s', transitionDelay: '1.5s', transitionDuration: '1s'} }
+             onMouseEnter={this.handleMouseEnter}
+             onMouseLeave={this.handleMouseLeave}
+            >
+                { console.log(showStyle, hideStyle) }
                 {/* 控制定位 */}
                 <div className='broadcast-control'>
                     {/* 长背景 */}
@@ -19,16 +81,18 @@ class Broadcast extends Component {
                                 <a className='ct-next' href="javascript:;" title="下一首(ctrl+→)">下一首</a>
                             </div>
                             <div className='player-head'>
-                                <a href=""><img src={playHead} /></a>
+                                <a href=""><img src={playHead} alt=''/></a>
                             </div>
                             {/* 进度条 */}
                             <div className='player-info'>
                                 <div className='player-info-name'>
-                                    <a className='singe-name t-hide' href="">Cross Me (feat. Chance the Rapper & PnB Rock)</a>
+                                    {/* {console.log('播放中', this.props.singeIng)} */}
+                                    {/* 正在播放的歌曲 */}
+                                    <a className='singe-name t-hide' href="">{this.props.singeIng}</a>    
                                     <span className='t-hide'>
                                         <a  href="">Ed&nbsp;Sheeran</a>
                                     </span>
-                                    <a  className='player-src' href=""></a>
+                                    <a className='player-src' href="javascript:;"> </a>
                                 </div>
                                 {/* 时间条 */}
                                 <div className='player-info-prg'>
@@ -61,14 +125,15 @@ class Broadcast extends Component {
                                     </div>
 
                                 </div>
-
-
-                                <a className='icn2 icn-vol' href="javascript:;"></a>
-                                <a className='icn2 icn-one' href="javascript:;"></a>
+                                <a className='icn2 icn-vol' href="javascript:;"> </a>
+                                <a className='icn2 icn-one' href="javascript:;"> </a>
                                 
                                 {/* 歌曲列表 */}
                                 <span className='icn-singe-item'>
-                                    <a className='icn2 ico-ply icn-more' href="javascript:;"></a>
+                                    <a className='icn2 ico-ply icn-more' href="javascript:;"
+                                     onClick = {this.handlegingeList}
+                                    >
+                                    </a>
                                 </span>
                             </div>
                             
@@ -76,15 +141,19 @@ class Broadcast extends Component {
                     </div>
                     {/* 播放条 */}
                 </div>
-                <div className='show-bc'>
+                <div className='show-bc'
+                onClick={this.handleOnclickShow}
+                >
                     {/* 锁 */}
-                    <div className='show--lock-bc'></div>
+                    <div className='show--lock-bc' style={barLockStatus ? { backgroundPosition: '-100px -380px'}: {}}></div>
                 </div>
 
-
-
                 {/* 添加音乐列表 */}
-                <div className='listed'>
+                <div className='listed'
+                style = {
+                   showListSinge ?{ display:'block' } : {}
+                }
+                >
                     <div className='listed-head'>
                         {/* 播放列表 */}
                         <div className='head-pl'>
@@ -99,13 +168,41 @@ class Broadcast extends Component {
                         {/* 歌词 */}
                         <div className='head-details'>
                             <h4 className='t-hide'>Cross Me (feat. Chance the Rapper & PnB Rock)</h4>
-                            <a className='delete-music' href="javascript:;">x</a>
+                            <a className='delete-music' href="javascript:;"
+                            onClick = { this.handleHideSinge}
+                            >x</a>
                         </div>
                     </div>
 
-
+                    {/* 播发列表 */}
                     <div className='listed-content'>
-                        <div className='listed-content-main'></div>
+                        <div className='listed-content-main'>
+                            <ul>
+                            {
+
+                                this.props.singeListItem.map((item, i) => {
+                                    return(
+                                        <li className='listed-item clearfix' key = { i }>
+                                            <div className='list-playing'><i className='icon-playing'></i></div>
+                                            <div className='list-singe'>{item.singeName}</div>
+                                            <div className='list-control'>
+                                                <i className='ico3 icon-add-all'></i>
+                                                <i className='ico3 icn2-inline'></i>
+                                                <i className='icn2 icn2-inline icon-down'></i>
+                                                <i className='ico3 icon-delete-all'></i>
+                                            </div>
+                                            <div className='list-info'>
+                                                <span>{item.singer}</span>
+                                                <span>{item.singerTime}</span>
+                                                <span className='list-info-srcou'></span>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                            </ul>
+                        </div>
+
                         <div className='listed-content-gc'></div>
 
                     </div>

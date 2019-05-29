@@ -10,7 +10,7 @@
 .content-wrap{
     float: left;
     width: 728px;
-
+    border-right: 1px solid #d3d3d3;
 }
 .main-content{
     padding: 20px 20px 40px;
@@ -34,10 +34,14 @@
 
 .hot-nav{
     float: left;
-    margin: 7px 0 0 20px;
+    margin: 7px 0 0 26px;
+    font-size: 12px;
+}
+.hot-nav > a:hover{
+    text-decoration: underline;
 }
 .line{
-    margin: 0 10px;
+    margin: 0 16px;
     color: #ccc;
 }
 
